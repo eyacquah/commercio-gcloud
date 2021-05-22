@@ -1,0 +1,57 @@
+{
+  "name": "commercio",
+  "version": "1.0.0",
+  "description": "Simple E-commerce store builder using Node Js, Express and MongoDB",
+  "main": "./public/js/bundle.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node server",
+    "dev": "cross-env NODE_ENV=development nodemon server",
+    "watch": "parcel watch ./public/js/index.js --dist-dir ./public/js/bundle.js",
+    "build": "parcel build ./public/js/index.js --dist-dir ./public/js/bundle.js"
+  },
+  "author": "Emmanuel Yaw Acquah",
+  "license": "MIT",
+  "dependencies": {
+    "@google-cloud/storage": "^5.8.5",
+    "axios": "^0.21.1",
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
+    "connect-mongo": "^4.4.1",
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^9.0.2",
+    "express": "^4.17.1",
+    "express-mongo-sanitize": "^2.1.0",
+    "express-rate-limit": "^5.2.6",
+    "express-session": "^1.17.1",
+    "helmet": "^4.6.0",
+    "hpp": "^0.2.3",
+    "mongoose": "^5.12.8",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "parcel": "^2.0.0-beta.3.1",
+    "passport": "^0.4.1",
+    "passport-google-oauth20": "^2.0.0",
+    "paystack": "^2.0.1",
+    "pug": "^3.0.2",
+    "regenerator-runtime": "^0.13.7",
+    "sharp": "^0.28.2",
+    "slugify": "^1.5.3",
+    "validator": "^13.6.0",
+    "xss-clean": "^0.1.1"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "eslint": "^7.18.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.22.0",
+    "prettier": "^2.2.1"
+  },
+  "engines": {
+    "node": "12.18.4"
+  }
+}

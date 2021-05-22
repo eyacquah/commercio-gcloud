@@ -1,0 +1,446 @@
+doctype html
+head
+  meta(charset='utf-8')
+  // ====== Title ======
+  title Commercio
+  meta(name='description' content='')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  // ====== Favicon Icon ======
+  link(rel='shortcut icon' href='/assets/index/images/comm_favicon.png' type='image/png')
+  // ====== Animate CSS ======
+  link(rel='stylesheet' href='/assets/index/css/animate.css')
+  // ====== Line Icons CSS ======
+  link(rel='stylesheet' href='/assets/index/css/LineIcons.2.0.css')
+  // ====== Bootstrap CSS ======
+  link(rel='stylesheet' href='/assets/index/css/bootstrap-4.5.0.min.css')
+  // ====== Default CSS ======
+  link(rel='stylesheet' href='/assets/index/css/default.css')
+  // ====== Style CSS ======
+  link(rel='stylesheet' href='/assets/index/css/style.css')
+//if IE
+  p.browserupgrade
+    | You are using an 
+    strong outdated
+    |  browser. Please 
+    a(href='https://browsehappy.com/') upgrade your browser
+    |  to improve your experience and security.
+// ====== PRELOADER PART START ======
+.preloader
+  .loader
+    .ytp-spinner
+      .ytp-spinner-container
+        .ytp-spinner-rotator
+          .ytp-spinner-left
+            .ytp-spinner-circle
+          .ytp-spinner-right
+            .ytp-spinner-circle
+// ====== PRELOADER PART ENDS ======
+// ====== HEADER PART START ======
+header.header-area
+  .navbar-area
+    .container
+      .row
+        .col-lg-12
+          nav.navbar.navbar-expand-lg
+            a.navbar-brand(href='index.html')
+              img(src='/assets/index/images/comm_logo_transparent.png' style='width: 10rem; height: 9rem;' alt='Logo')
+            button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+              span.toggler-icon
+              span.toggler-icon
+              span.toggler-icon
+            #navbarSupportedContent.collapse.navbar-collapse.sub-menu-bar
+              ul#nav.navbar-nav.ml-auto
+                li.nav-item.active
+                  a.page-scroll(href='#home') Home
+                li.nav-item
+                  a.page-scroll(href='#features') Features
+                li.nav-item
+                  a.page-scroll(href='#about') About
+                li.nav-item
+                  a.page-scroll(href='#facts') Why
+                li.nav-item
+                  a.page-scroll(href='#team') Team
+                li.nav-item
+                  a.page-scroll(href='#blog') Blog
+            // navbar collapse
+            .navbar-btn.d-none.d-sm-inline-block
+              a.main-btn(data-scroll-nav='0' href='/auth/login' rel='nofollow') Download Now
+          // navbar
+      // row
+    // container
+  // navbar area
+  #home.header-hero.bg_cover(style='background-image: url(/assets/index/images/comm_rose-Petals.svg)')
+    .container
+      .row.justify-content-center
+        .col-lg-8
+          .header-hero-content.text-center
+            h3.header-sub-title.wow.fadeInUp(data-wow-duration='1.3s' data-wow-delay='0.2s') Commercio Home Page
+            h2.header-title.wow.fadeInUp(data-wow-duration='1.3s' data-wow-delay='0.5s') Kickstart Your Business&apos; Store
+            p.text.wow.fadeInUp(data-wow-duration='1.3s' data-wow-delay='0.8s')
+              | Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+            a.main-btn.wow.fadeInUp(href='/auth/login' data-wow-duration='1.3s' data-wow-delay='1.1s') Get Started
+          // header hero content
+      // row
+      .row
+        .col-lg-12
+          .header-hero-image.text-center.wow.fadeIn(data-wow-duration='1.3s' data-wow-delay='1.4s')
+            img(src='/assets/index/images/header-hero.png' alt='hero')
+          // header hero image
+      // row
+    // container
+    #particles-1.particles
+  // header hero
+// ====== HEADER PART ENDS ======
+// ====== BRAMD PART START ======
+.brand-area.pt-90
+  .container
+    .row
+      .col-lg-12
+        .brand-logo.d-flex.align-items-center.justify-content-center.justify-content-md-between
+          .single-logo.mt-30.wow.fadeIn(data-wow-duration='1s' data-wow-delay='0.2s')
+            img(src='/assets/index/images/brand-1.png' alt='brand')
+          // single logo
+          .single-logo.mt-30.wow.fadeIn(data-wow-duration='1.5s' data-wow-delay='0.2s')
+            img(src='/assets/index/images/brand-2.png' alt='brand')
+          // single logo
+          .single-logo.mt-30.wow.fadeIn(data-wow-duration='1.5s' data-wow-delay='0.3s')
+            img(src='/assets/index/images/brand-3.png' alt='brand')
+          // single logo
+          .single-logo.mt-30.wow.fadeIn(data-wow-duration='1.5s' data-wow-delay='0.4s')
+            img(src='/assets/index/images/brand-4.png' alt='brand')
+          // single logo
+          .single-logo.mt-30.wow.fadeIn(data-wow-duration='1.5s' data-wow-delay='0.5s')
+            img(src='/assets/index/images/brand-5.png' alt='brand')
+          // single logo
+        // brand logo
+    // row
+  // container
+// ====== BRAMD PART ENDS ======
+// ====== SERVICES PART START ======
+section#features.services-area.pt-120
+  .container
+    .row.justify-content-center
+      .col-lg-10
+        .section-title.text-center.pb-40
+          .line.m-auto
+          h3.title
+            | Clean and simple design, 
+            span  Comes with everything you need to get your store started!
+        // section title
+    // row
+    .row.justify-content-center
+      .col-lg-4.col-md-7.col-sm-8
+        .single-services.text-center.mt-30.wow.fadeIn(data-wow-duration='1s' data-wow-delay='0.2s')
+          .services-icon
+            img.shape(src='/assets/index/images/services-shape.svg' alt='shape')
+            img.shape-1(src='/assets/index/images/services-shape-1.svg' alt='shape')
+            i.lni.lni-baloon
+          .services-content.mt-30
+            h4.services-title
+              a(href='#') Clean
+            p.text
+              | Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.
+            a.more(href='#')
+              | Learn More 
+              i.lni.lni-chevron-right
+        // single services
+      .col-lg-4.col-md-7.col-sm-8
+        .single-services.text-center.mt-30.wow.fadeIn(data-wow-duration='1s' data-wow-delay='0.5s')
+          .services-icon
+            img.shape(src='/assets/index/images/services-shape.svg' alt='shape')
+            img.shape-1(src='/assets/index/images/services-shape-2.svg' alt='shape')
+            i.lni.lni-cog
+          .services-content.mt-30
+            h4.services-title
+              a(href='#') Robust
+            p.text
+              | Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.
+            a.more(href='#')
+              | Learn More 
+              i.lni.lni-chevron-right
+        // single services
+      .col-lg-4.col-md-7.col-sm-8
+        .single-services.text-center.mt-30.wow.fadeIn(data-wow-duration='1s' data-wow-delay='0.8s')
+          .services-icon
+            img.shape(src='/assets/index/images/services-shape.svg' alt='shape')
+            img.shape-1(src='/assets/index/images/services-shape-3.svg' alt='shape')
+            i.lni.lni-bolt-alt
+          .services-content.mt-30
+            h4.services-title
+              a(href='#') Secure
+            p.text
+              | Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.
+            a.more(href='#')
+              | Learn More 
+              i.lni.lni-chevron-right
+        // single services
+    // row
+  // container
+// ====== SERVICES PART ENDS ======
+// ====== ABOUT PART START ======
+section#about.about-area.pt-70
+  .container
+    .row
+      .col-lg-6
+        .about-content.mt-50.wow.fadeInLeftBig(data-wow-duration='1s' data-wow-delay='0.5s')
+          .section-title
+            .line
+            h3.title
+              | Easy &amp; Secure 
+              span to Start and Maintain Stores
+          // section title
+          p.text
+            | Lorem ipsum dolor sit amet, consetetur sadipscing elitr, seiam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing.
+          a.main-btn(href='#') Try it Free
+        // about content
+      .col-lg-6
+        .about-image.text-center.mt-50.wow.fadeInRightBig(data-wow-duration='1s' data-wow-delay='0.5s')
+          img(src='/assets/index/images/about1.svg' alt='about')
+        // about image
+    // row
+  // container
+  .about-shape-1
+    img(src='/assets/index/images/about-shape-1.svg' alt='shape')
+// ====== ABOUT PART ENDS ======
+// ====== ABOUT PART START ======
+section.about-area.pt-70
+  .about-shape-2
+    img(src='/assets/index/images/about-shape-2.svg' alt='shape')
+  .container
+    .row
+      .col-lg-6.order-lg-last
+        .about-content.mt-50.wow.fadeInLeftBig(data-wow-duration='1s' data-wow-delay='0.5s')
+          .section-title
+            .line
+            h3.title
+              | Modern design 
+              span  with Essential Features
+          // section title
+          p.text
+            | Lorem ipsum dolor sit amet, consetetur sadipscing elitr, seiam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing.
+          a.main-btn(href='#') Try it Free
+        // about content
+      .col-lg-6.order-lg-first
+        .about-image.text-center.mt-50.wow.fadeInRightBig(data-wow-duration='1s' data-wow-delay='0.5s')
+          img(src='/assets/index/images/about2.svg' alt='about')
+        // about image
+    // row
+  // container
+// ====== ABOUT PART START ======
+section.about-area.pt-70
+  .container
+    .row
+      .col-lg-6
+        .about-content.mt-50.wow.fadeInLeftBig(data-wow-duration='1s' data-wow-delay='0.5s')
+          .section-title
+            .line
+            h3.title
+              span Crafted for
+              |  Entrepreneurs Across the Continent
+          // section title
+          p.text
+            | Lorem ipsum dolor sit amet, consetetur sadipscing elitr, seiam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing.
+          a.main-btn(href='#') Try it Free
+        // about content
+      .col-lg-6
+        .about-image.text-center.mt-50.wow.fadeInRightBig(data-wow-duration='1s' data-wow-delay='0.5s')
+          img(src='/assets/index/images/about3.svg' alt='about')
+        // about image
+    // row
+  // container
+  .about-shape-1
+    img(src='/assets/index/images/about-shape-1.svg' alt='shape')
+// ====== ABOUT PART ENDS ======
+// ====== ABOUT PART ENDS ======
+// ====== VIDEO COUNTER PART START ======
+section#facts.video-counter.pt-70
+  .container
+    .row
+      .col-lg-6
+        .video-content.mt-50.wow.fadeIn(data-wow-duration='1s' data-wow-delay='0.5s')
+          img.dots(src='/assets/index/images/dots.svg' alt='dots')
+          .video-wrapper
+            .video-image
+              img(src='/assets/index/images/video.png' alt='video')
+            .video-icon
+              a.video-popup(href='https://www.youtube.com/watch?v=r44RKWyfcFw')
+                i.lni.lni-play
+          // video wrapper
+        // video content
+      .col-lg-6
+        .counter-wrapper.mt-50.wow.fadeIn(data-wow-duration='1s' data-wow-delay='0.8s')
+          .counter-content
+            .section-title
+              .line
+              h3.title
+                | Cool facts 
+                span  about this app
+            // section title
+            p.text
+              | Lorem ipsum dolor sit amet, consetetur sadipscing elitr, seiam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+          // counter content
+          .row.no-gutters
+            .col-4
+              .single-counter.counter-color-1.d-flex.align-items-center.justify-content-center
+                .counter-items.text-center
+                  span.count
+                    span.counter 125
+                    | K
+                  p.text Active Stores
+              // single counter
+            .col-4
+              .single-counter.counter-color-2.d-flex.align-items-center.justify-content-center
+                .counter-items.text-center
+                  span.count
+                    span.counter 87
+                    | K
+                  p.text Active Users
+              // single counter
+            .col-4
+              .single-counter.counter-color-3.d-flex.align-items-center.justify-content-center
+                .counter-items.text-center
+                  span.count
+                    span.counter 4.8
+                  p.text User Rating
+              // single counter
+          // row
+        // counter wrapper
+    // row
+  // container
+// ====== VIDEO COUNTER PART ENDS ======
+// ====== FOOTER PART START ======
+footer#footer.footer-area.pt-120
+  .container
+    .subscribe-area.wow.fadeIn(data-wow-duration='1s' data-wow-delay='0.5s')
+      .row
+        .col-lg-6
+          .subscribe-content.mt-45
+            h2.subscribe-title
+              | Subscribe Our Newsletter 
+              span get reguler updates
+        .col-lg-6
+          .subscribe-form.mt-50
+            form(action='#')
+              input(type='text' placeholder='Enter email')
+              button.main-btn Subscribe
+      // row
+    // subscribe area
+    .footer-widget.pb-100
+      .row
+        .col-lg-4.col-md-6.col-sm-8
+          .footer-about.mt-50.wow.fadeIn(data-wow-duration='1s' data-wow-delay='0.2s')
+            a.logo(href='#')
+              img(src='/assets/index/images/comm_logo_transparent.png' alt='logo')
+            p.text
+              | Lorem ipsum dolor sit amet consetetur sadipscing elitr, sederfs diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam.
+            ul.social
+              li
+                a(href='#')
+                  i.lni.lni-facebook-filled
+              li
+                a(href='#')
+                  i.lni.lni-twitter-filled
+              li
+                a(href='#')
+                  i.lni.lni-instagram-filled
+              li
+                a(href='#')
+                  i.lni.lni-linkedin-original
+          // footer about
+        .col-lg-5.col-md-7.col-sm-7
+          .footer-link.d-flex.mt-50.justify-content-md-between
+            .link-wrapper.wow.fadeIn(data-wow-duration='1s' data-wow-delay='0.4s')
+              .footer-title
+                h4.title Quick Link
+              ul.link
+                li
+                  a(href='#') Road Map
+                li
+                  a(href='#') Privacy Policy
+                li
+                  a(href='#') Refund Policy
+                li
+                  a(href='#') Terms of Service
+                li
+                  a(href='#') Pricing
+            // footer wrapper
+            .link-wrapper.wow.fadeIn(data-wow-duration='1s' data-wow-delay='0.6s')
+              .footer-title
+                h4.title Resources
+              ul.link
+                li
+                  a(href='#') Home
+                li
+                  a(href='#') Page
+                li
+                  a(href='#') Portfolio
+                li
+                  a(href='#') Blog
+                li
+                  a(href='#') Contact
+            // footer wrapper
+          // footer link
+        .col-lg-3.col-md-5.col-sm-5
+          .footer-contact.mt-50.wow.fadeIn(data-wow-duration='1s' data-wow-delay='0.8s')
+            .footer-title
+              h4.title Contact Us
+            ul.contact
+              li +809272561823
+              li info@gmail.com
+              li www.yourweb.com
+              li
+                | 123 Stree New York City , United 
+                br
+                |  States Of America 750.
+          // footer contact
+      // row
+    // footer widget
+    .footer-copyright
+      .row
+        .col-lg-12
+          .copyright.d-sm-flex.justify-content-between
+            .copyright-content
+              p.text
+                | Designed and Developed by 
+                a(href='https://uideck.com' rel='nofollow') UIdeck
+            // copyright content
+          // copyright
+      // row
+    // footer copyright
+  // container
+  #particles-2
+// ====== FOOTER PART ENDS ======
+// ====== BACK TOP TOP PART START ======
+a.back-to-top(href='#')
+  i.lni.lni-chevron-up
+// ====== BACK TOP TOP PART ENDS ======
+// ====== PART START ======
+//
+  <section class="">
+  <div class="container">
+  <div class="row">
+  <div class="col-lg-"></div>
+  </div>
+  </div>
+  </section>
+// ====== PART ENDS ======
+// ====== Jquery js ======
+script(src='/assets/index/js/vendor/jquery-3.5.1-min.js')
+script(src='/assets/index/js/vendor/modernizr-3.7.1.min.js')
+// ====== Bootstrap js ======
+//- script(src='/assets/index/js/popper.min.js')
+script(src='/assets/index/js/bootstrap.bundle.js')
+// ====== Plugins js ======
+script(src='/assets/index/js/plugins.js')
+// ====== Counter Up js ======
+script(src='/assets/index/js/waypoints.min.js')
+script(src='/assets/index/js/jquery.counterup.min.js')
+// ====== Scrolling Nav js ======
+script(src='/assets/index/js/jquery.easing.min.js')
+script(src='/assets/index/js/scrolling-nav.js')
+// ====== wow js ======
+script(src='/assets/index/js/wow.min.js')
+// ====== Particles js ======
+script(src='/assets/index/js/particles.min.js')
+// ====== Main js ======
+script(src='/assets/index/js/main.js')

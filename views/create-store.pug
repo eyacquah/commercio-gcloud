@@ -1,0 +1,345 @@
+doctype html
+head
+  meta(charset='utf-8')
+  title Commercio | Add New Store
+  // SEO Meta Tags
+  meta(name='description' content='Cartzilla - Bootstrap E-commerce Template')
+  meta(name='keywords' content='bootstrap, shop, e-commerce, market, modern, responsive,  business, mobile, bootstrap, html5, css3, js, gallery, slider, touch, creative, clean')
+  meta(name='author' content='Createx Studio')
+  // Viewport
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  // Favicon and Touch Icons
+  link(rel='shortcut icon' href='/assets/theme/img/comm_favicon.png' type='image/png')
+  // Vendor Styles including: Font Icons, Plugins, etc.
+  link(rel='stylesheet' media='screen' href='/assets/theme/vendor/simplebar/dist/simplebar.min.css')
+  link(rel='stylesheet' media='screen' href='/assets/theme/vendor/tiny-slider/dist/tiny-slider.css')
+  // Main Theme Styles + Bootstrap
+  link(rel='stylesheet' media='screen' href='/assets/theme/css/theme.min.css')
+// Body
+// Sign in / sign up modal
+#signin-modal.modal.fade(tabindex='-1' role='dialog')
+  .modal-dialog.modal-dialog-centered(role='document')
+    .modal-content
+      .modal-header.bg-secondary
+        ul.nav.nav-tabs.card-header-tabs(role='tablist')
+          li.nav-item
+            a.nav-link.fw-medium.active(href='#signin-tab' data-bs-toggle='tab' role='tab' aria-selected='true')
+              i.ci-unlocked.me-2.mt-n1
+              | Sign in
+          li.nav-item
+            a.nav-link.fw-medium(href='#signup-tab' data-bs-toggle='tab' role='tab' aria-selected='false')
+              i.ci-user.me-2.mt-n1
+              | Sign up
+        button.btn-close(type='button' data-bs-dismiss='modal' aria-label='Close')
+      .modal-body.tab-content.py-4
+        form#signin-tab.needs-validation.tab-pane.fade.show.active(autocomplete='off' novalidate='')
+          .mb-3
+            label.form-label(for='si-email') Email address
+            input#si-email.form-control(type='email' placeholder='johndoe@example.com' required='')
+            .invalid-feedback Please provide a valid email address.
+          .mb-3
+            label.form-label(for='si-password') Password
+            .password-toggle
+              input#si-password.form-control(type='password' required='')
+              label.password-toggle-btn(aria-label='Show/hide password')
+                input.password-toggle-check(type='checkbox')
+                span.password-toggle-indicator
+          .mb-3.d-flex.flex-wrap.justify-content-between
+            .form-check.mb-2
+              input#si-remember.form-check-input(type='checkbox')
+              label.form-check-label(for='si-remember') Remember me
+            a.fs-sm(href='#') Forgot password?
+          button.btn.btn-primary.btn-shadow.d-block.w-100(type='submit') Sign in
+        form#signup-tab.needs-validation.tab-pane.fade(autocomplete='off' novalidate='')
+          .mb-3
+            label.form-label(for='su-name') Full name
+            input#su-name.form-control(type='text' placeholder='John Doe' required='')
+            .invalid-feedback Please fill in your name.
+          .mb-3
+            label(for='su-email') Email address
+            input#su-email.form-control(type='email' placeholder='johndoe@example.com' required='')
+            .invalid-feedback Please provide a valid email address.
+          .mb-3
+            label.form-label(for='su-password') Password
+            .password-toggle
+              input#su-password.form-control(type='password' required='')
+              label.password-toggle-btn(aria-label='Show/hide password')
+                input.password-toggle-check(type='checkbox')
+                span.password-toggle-indicator
+          .mb-3
+            label.form-label(for='su-password-confirm') Confirm password
+            .password-toggle
+              input#su-password-confirm.form-control(type='password' required='')
+              label.password-toggle-btn(aria-label='Show/hide password')
+                input.password-toggle-check(type='checkbox')
+                span.password-toggle-indicator
+          button.btn.btn-primary.btn-shadow.d-block.w-100(type='submit') Sign up
+// Navbar Marketplace
+// Remove "navbar-sticky" class to make navigation bar scrollable with the page.
+header.bg-light.shadow-sm.navbar-sticky
+  .navbar.navbar-expand-lg.navbar-light
+    .container
+      a.navbar-brand.d-none.d-sm-block.flex-shrink-0.me-4.order-lg-1(href='index.html')
+        img(src='/assets/theme/img/comm_logo_transparent.png' width='122' alt='Commercio')
+      // Toolbar
+      .navbar-toolbar.d-flex.align-items-center.order-lg-3
+        button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarCollapse')
+          span.navbar-toggler-icon
+        a.navbar-tool.d-none.d-lg-flex(href='javascript:void(0)' data-bs-toggle='collapse' data-bs-target='#searchBox' role='button' aria-expanded='false' aria-controls='searchBox')
+          span.navbar-tool-tooltip Search
+          .navbar-tool-icon-box
+            i.navbar-tool-icon.ci-search
+        a.navbar-tool.d-none.d-lg-flex(href='dashboard-favorites.html')
+          span.navbar-tool-tooltip Favorites
+          .navbar-tool-icon-box
+            i.navbar-tool-icon.ci-heart
+        // <div class="navbar-tool dropdown ms-2"><a class="navbar-tool-icon-box border dropdown-toggle" href="dashboard-sales.html"><img src="/assets/theme/img/marketplace/account/vendor-avatar.png" width="32" alt="Commercio"></a><a class="navbar-tool-text ms-n1" href="dashboard-sales.html"><small>Createx Std.</small>$1,375.00</a>
+        //
+          <div class="dropdown-menu dropdown-menu-end">
+          <div style="min-width: 14rem;">
+          <h6 class="dropdown-header">Account</h6><a class="dropdown-item d-flex align-items-center" href="dashboard-settings.html"><i class="ci-settings opacity-60 me-2"></i>Settings</a><a class="dropdown-item d-flex align-items-center" href="dashboard-purchases.html"><i class="ci-basket opacity-60 me-2"></i>Purchases</a><a class="dropdown-item d-flex align-items-center" href="dashboard-favorites.html"><i class="ci-heart opacity-60 me-2"></i>Favorites<span class="fs-xs text-muted ms-auto">4</span></a>
+          <div class="dropdown-divider"></div>
+          <h6 class="dropdown-header">Seller Dashboard</h6><a class="dropdown-item d-flex align-items-center" href="dashboard-sales.html"><i class="ci-dollar opacity-60 me-2"></i>Sales<span class="fs-xs text-muted ms-auto">$1,375.00</span></a><a class="dropdown-item d-flex align-items-center" href="dashboard-products.html"><i class="ci-package opacity-60 me-2"></i>Products<span class="fs-xs text-muted ms-auto">5</span></a><a class="dropdown-item d-flex align-items-center" href="dashboard-add-new-product.html"><i class="ci-cloud-upload opacity-60 me-2"></i>Add New Product</a><a class="dropdown-item d-flex align-items-center" href="dashboard-payouts.html"><i class="ci-currency-exchange opacity-60 me-2"></i>Payouts</a>
+          <div class="dropdown-divider"></div><a class="dropdown-item d-flex align-items-center" href="account-signin.html"><i class="ci-sign-out opacity-60 me-2"></i>Sign Out</a>
+          </div>
+          </div>
+          </div>
+        // <div class="navbar-tool ms-4"><a class="navbar-tool-icon-box bg-secondary dropdown-toggle" href="marketplace-cart.html"><span class="navbar-tool-label">3</span><i class="navbar-tool-icon ci-cart"></i></a></div>
+      #navbarCollapse.collapse.navbar-collapse.me-auto.order-lg-2
+        // Search
+        .input-group.d-lg-none.my-3
+          i.ci-search.position-absolute.top-50.start-0.translate-middle-y.text-muted.fs-base.ms-3
+          input.form-control.rounded-start(type='text' placeholder='Search marketplace')
+        // Categories dropdown
+        ul.navbar-nav.navbar-mega-nav.pe-lg-2.me-lg-2
+          li.nav-item.dropdown
+            a.nav-link.dropdown-toggle.ps-lg-0(href='#' data-bs-toggle='dropdown')
+              i.ci-menu.align-middle.mt-n1.me-2
+              | Categories
+            ul.dropdown-menu.py-1
+              li.dropdown
+                a.dropdown-item.dropdown-toggle(href='#' data-bs-toggle='dropdown') Photos
+                ul.dropdown-menu
+                  li.dropdown-item.product-title.fw-medium
+                    a(href='marketplace-category.html')
+                      | All Photos
+                      i.ci-arrow-right.fs-xs.ms-1
+                  li.dropdown-divider
+                  li
+                    a.dropdown-item(href='marketplace-category.html') Abstract
+                  li
+                    a.dropdown-item(href='marketplace-category.html') Animals
+                  li
+                    a.dropdown-item(href='marketplace-category.html') Architecture
+                  li
+                    a.dropdown-item(href='marketplace-category.html') Beauty &amp; Fashion
+                  li
+                    a.dropdown-item(href='marketplace-category.html') Business
+                  li
+                    a.dropdown-item(href='marketplace-category.html') Education
+                  li
+                    a.dropdown-item(href='marketplace-category.html') Food &amp; Drink
+                  li
+                    a.dropdown-item(href='marketplace-category.html') Holidays
+                  li
+                    a.dropdown-item(href='marketplace-category.html') Industrial
+                  li
+                    a.dropdown-item(href='marketplace-category.html') People
+                  li
+                    a.dropdown-item(href='marketplace-category.html') Sports
+                  li
+                    a.dropdown-item(href='marketplace-category.html') Technology
+              li.dropdown
+                a.dropdown-item.dropdown-toggle(href='#' data-bs-toggle='dropdown') Graphics
+                ul.dropdown-menu
+                  li.dropdown-item.product-title.fw-medium
+                    a(href='#')
+                      | All Graphics
+                      i.ci-arrow-right.fs-xs.ms-1
+                  li.dropdown-divider
+                  li
+                    a.dropdown-item(href='marketplace-category.html') Icons
+                  li
+                    a.dropdown-item(href='marketplace-category.html') Illustartions
+                  li
+                    a.dropdown-item(href='marketplace-category.html') Patterns
+                  li
+                    a.dropdown-item(href='marketplace-category.html') Textures
+                  li
+                    a.dropdown-item(href='marketplace-category.html') Web Elements
+              li.dropdown
+                a.dropdown-item.dropdown-toggle(href='#' data-bs-toggle='dropdown') UI Design
+                ul.dropdown-menu
+                  li.dropdown-item.product-title.fw-medium
+                    a(href='marketplace-category.html')
+                      | All UI Design
+                      i.ci-arrow-right.fs-xs.ms-1
+                  li.dropdown-divider
+                  li
+                    a.dropdown-item(href='marketplace-category.html') PSD Templates
+                  li
+                    a.dropdown-item(href='marketplace-category.html') Sketch Templates
+                  li
+                    a.dropdown-item(href='marketplace-category.html') Adobe XD Templates
+                  li
+                    a.dropdown-item(href='marketplace-category.html') Figma Templates
+              li.dropdown
+                a.dropdown-item.dropdown-toggle(href='#' data-bs-toggle='dropdown') Web Themes
+                ul.dropdown-menu
+                  li.dropdown-item.product-title.fw-medium
+                    a(href='marketplace-category.html')
+                      | All Web Themes
+                      i.ci-arrow-right.fs-xs.ms-1
+                  li.dropdown-divider
+                  li
+                    a.dropdown-item(href='marketplace-category.html') WordPress Themes
+                  li
+                    a.dropdown-item(href='marketplace-category.html') Bootstrap Themes
+                  li
+                    a.dropdown-item(href='marketplace-category.html') eCommerce Templates
+                  li
+                    a.dropdown-item(href='marketplace-category.html') Muse Templates
+                  li
+                    a.dropdown-item(href='marketplace-category.html') Plugins
+              li.dropdown
+                a.dropdown-item.dropdown-toggle(href='#' data-bs-toggle='dropdown') Fonts
+                ul.dropdown-menu
+                  li.dropdown-item.product-title.fw-medium
+                    a(href='marketplace-category.html')
+                      | All Fonts
+                      i.ci-arrow-right.fs-xs.ms-1
+                  li.dropdown-divider
+                  li
+                    a.dropdown-item(href='marketplace-category.html') Blackletter
+                  li
+                    a.dropdown-item(href='marketplace-category.html') Display
+                  li
+                    a.dropdown-item(href='marketplace-category.html') Non Western
+                  li
+                    a.dropdown-item(href='marketplace-category.html') Sans Serif
+                  li
+                    a.dropdown-item(href='marketplace-category.html') Script
+                  li
+                    a.dropdown-item(href='marketplace-category.html') Serif
+                  li
+                    a.dropdown-item(href='marketplace-category.html') Slab Serif
+                  li
+                    a.dropdown-item(href='marketplace-category.html') Symbols
+              li.dropdown
+                a.dropdown-item.dropdown-toggle(href='#' data-bs-toggle='dropdown') Add-Ons
+                ul.dropdown-menu
+                  li.dropdown-item.product-title.fw-medium
+                    a(href='marketplace-category.html')
+                      | All Add-Ons
+                      i.ci-arrow-right.fs-xs.ms-1
+                  li.dropdown-divider
+                  li
+                    a.dropdown-item(href='marketplace-category.html') Photoshop Add-Ons
+                  li
+                    a.dropdown-item(href='marketplace-category.html') Illustrator Add-Ons
+                  li
+                    a.dropdown-item(href='marketplace-category.html') Sketch Plugins
+                  li
+                    a.dropdown-item(href='marketplace-category.html') Procreate Brushes
+                  li
+                    a.dropdown-item(href='marketplace-category.html') InDesign Palettes
+                  li
+                    a.dropdown-item(href='marketplace-category.html') Lightroom Presets
+                  li
+                    a.dropdown-item(href='marketplace-category.html') Other Software
+  // Search collapse
+  #searchBox.search-box.collapse
+    .card.pt-2.pb-4.border-0.rounded-0
+      .container
+        .input-group
+          i.ci-search.position-absolute.top-50.start-0.translate-middle-y.text-muted.fs-base.ms-3
+          input.form-control.rounded-start(type='text' placeholder='Search marketplace')
+// Dashboard header
+.page-title-overlap.bg-accent.pt-4
+  .container.d-flex.flex-wrap.flex-sm-nowrap.justify-content-center.justify-content-sm-between.align-items-center.pt-2
+    .d-flex.align-items-center.pb-3
+      .ps-3
+        h1.text-light.fs-lg.mb-0 Add New Store Account
+        // <span class="d-block text-light fs-ms opacity-60 py-1">Member since November 2019</span>
+    //
+      <div class="d-flex">
+      <div class="text-sm-end me-5">
+      <div class="text-light fs-base">Total sales</div>
+      <h3 class="text-light">426</h3>
+      </div>
+      <div class="text-sm-end">
+      <div class="text-light fs-base">Seller rating</div>
+      <div class="star-rating"><i class="star-rating-icon ci-star-filled active"></i><i class="star-rating-icon ci-star-filled active"></i><i class="star-rating-icon ci-star-filled active"></i><i class="star-rating-icon ci-star-filled active"></i><i class="star-rating-icon ci-star"></i>
+      </div>
+      <div class="text-light opacity-60 fs-xs">Based on 98 reviews</div>
+      </div>
+      </div>
+.container.mb-5.pb-3
+  .bg-light.shadow-lg.rounded-3.overflow-hidden
+    .row
+      // Sidebar
+      aside.col-lg-4.pe-xl-5.bg-black
+        aside
+          //- img#aside(src='/assets/theme/img/marketplace/products/th11.jpg' alt='aside')
+        #account-menu.d-lg-block.collapse
+          .bg-secondary.p-4
+            h3.fs-sm.mb-0.text-muted Account
+          .py-2
+            select#unp-category.form-select.me-2
+              option Select Store category
+              option Photos
+              option Graphics
+              option UI Design
+              option Web Themes
+              option Fonts
+              option Add-Ons
+      // Content
+      section.col-lg-8.pt-lg-4.pb-4.mb-3
+        .pt-2.px-4.ps-lg-0.pe-xl-5
+          // Title
+          .d-sm-flex.flex-wrap.justify-content-between.align-items-center.pb-2
+            h2.h2.py-2.me-2.text-center.text-sm-start Store Account Details
+          form.storeForm(data-userID=userID)
+            .mb-3.pb-2
+              label.form-label(for='name') Store name
+              input#name.form-control(type='text')
+              .form-text Maximum 100 characters. No HTML or emoji allowed.
+            .file-drop-area.mb-3
+              .file-drop-icon.ci-cloud-upload
+              span.file-drop-message Drag and drop here to upload logo 
+              input.file-drop-input(type='file')
+              button.file-drop-btn.btn.btn-primary.btn-sm.mb-2(type='button') Or select logo file
+              .form-text 1000 x 800px ideal size for hi-res displays
+            .mb-3.py-2
+              label.form-label(for='description') Store description
+              textarea#description.form-control(rows='6')
+              .bg-secondary.p-3.fs-ms.rounded-bottom
+                span.d-inline-block.fw-medium.me-2.my-1 Markdown supported:
+                em.d-inline-block.border-end.pe-2.me-2.my-1 *Italic*
+                strong.d-inline-block.border-end.pe-2.me-2.my-1 **Bold**
+                span.d-inline-block.border-end.pe-2.me-2.my-1 - List item
+                span.d-inline-block.border-end.pe-2.me-2.my-1 ##Heading##
+                span.d-inline-block --- Horizontal rule
+            .row
+              p.form-label  Store address
+              .col-md-3.mb-3
+                label.form-label(for='country') Country
+                input#country.form-control(type='text' placeholder='Country')
+              .col-md-3.mb-3
+                label.form-label(for='region') Region/State
+                input#region.form-control(type='text' placeholder='Region/State')
+              .col-md-3.mb-3
+                label.form-label(for='city') City
+                input#city.form-control(type='text' placeholder='City')
+              .col-md-3.mb-3
+                label.form-label(for='state') Street Address 
+                input#state.form-control(type='text' placeholder='Street Address')
+            .col-sm-6.mb-3
+              label.form-label(for='phone') Telephone
+              input#phone.form-control(type='tel' placeholder='Telephone')
+              .form-text Should include numbers only
+            button.btn.btn-primary.d-block.w-100(type='submit')
+              i.ci-cloud-upload.fs-lg.me-2
+              | Create Store
+// Footer
+include _footer

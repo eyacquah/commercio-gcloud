@@ -1,0 +1,51 @@
+doctype html
+head
+    meta(charset='utf-8')
+    title Commercio | Dashboard
+    // SEO Meta Tags
+    meta(name='description' content='Cartzilla - Bootstrap E-commerce Template')
+    meta(name='keywords' content='bootstrap, shop, e-commerce, market, modern, responsive,  business, mobile, bootstrap, html5, css3, js, gallery, slider, touch, creative, clean')
+    meta(name='author' content='Createx Studio')
+    // Viewport
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    // Favicon and Touch Icons
+    link(rel='shortcut icon' href='/assets/theme/img/comm_favicon.png' type='image/png')
+    // Vendor Styles including: Font Icons, Plugins, etc.
+    link(rel='stylesheet' media='screen' href='/assets/theme/vendor/simplebar/dist/simplebar.min.css')
+    link(rel='stylesheet' media='screen' href='/assets/theme/vendor/tiny-slider/dist/tiny-slider.css')
+    // Main Theme Styles + Bootstrap
+    link(rel='stylesheet' media='screen' href='/assets/theme/css/theme.min.css')
+    // Google Assets
+    link(rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans')
+    link(rel='stylesheet' media='screen' href='/assets/theme/css/login.css')
+
+
+    
+// Body
+// Sign in / sign up modal
+
+body.handheld-toolbar-enabled
+
+
+
+    //- Login
+
+
+    .container.py-4.py-lg-5.my-4
+        .row
+            .col-md-6
+                .card.border-0.shadow
+                    .card-body
+                        h2.mb1 Sign In
+                        br
+                        br
+                        .google-btn
+                            .google-icon-wrapper.me-2.mb-2
+                                a(href="/auth/google") 
+                                    img.google-icon(src='https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg')
+                            p.btn-text
+                                a.google-text(href="/auth/google") Sign in with google
+                        br
+                        br
+
+    include _footer
