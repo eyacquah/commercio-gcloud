@@ -3,3 +3,4 @@ node_modules/
 .cache/
 config/storageKeys.json
 .parcel-cache/
+app.yaml
