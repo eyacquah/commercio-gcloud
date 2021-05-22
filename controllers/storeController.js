@@ -50,7 +50,7 @@ exports.resizeImage = catchAsync(async (req, res, next) => {
   req.body.image = imageUrl;
   console.log(imageUrl);
 
-  res.status(200).json({ status: "success", data: req.body });
-  return;
-  //   next();
+  // res.status(200).json({ status: "success", data: req.body });
+  // return;
+  next();
 });

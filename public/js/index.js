@@ -1,3 +1,4 @@
+import regeneratorRuntime from "regenerator-runtime";
 import { createStore } from "./storeForm";
 
 const storeForm = document.querySelector(".storeForm");

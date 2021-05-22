@@ -6,6 +6,6 @@ Built with modern tcehnologies: NodeJS, Express, MongoDB, Mongoose and Friends ð
 
 Deployed on Google Cloud App Engine
 Some features include:
-User Authentication using Google OAuth2.0
-Payment Integration with Paystack
+User Authentication using Google OAuth2.0,
+Payment Integration with Paystack,
 Image uploads with Google Cloud Storage and many more

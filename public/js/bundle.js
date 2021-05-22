@@ -140,12 +140,12 @@
       this[globalName] = mainExports;
     }
   }
-})({"5tDg9":[function(require,module,exports) {
+})({"2ZPYD":[function(require,module,exports) {
 var HMR_HOST = null;
 var HMR_PORT = 1234;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d751713988987e9331980363e24189ce";
-module.bundle.HMR_BUNDLE_ID = "9b165f4e5961d14f037184f366cbfc3b"; // @flow
+module.bundle.HMR_BUNDLE_ID = "fa0d3ce2f0aa394229746f8c019c5eff"; // @flow
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE */ /*::
 import type {
   HMRAsset,
@@ -380,7 +380,10 @@ function hmrAcceptRun(bundle/*: ParcelRequire */ , id/*: string */ ) {
     acceptedAssets[id] = true;
 }
 
-},{}],"2ejcX":[function(require,module,exports) {
+},{}],"3ZdWd":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+var _regeneratorRuntime = require("regenerator-runtime");
+var _regeneratorRuntimeDefault = parcelHelpers.interopDefault(_regeneratorRuntime);
 var _storeForm = require("./storeForm");
 const storeForm = document.querySelector(".storeForm");
 function handleStoreForm(e) {
@@ -389,23 +392,34 @@ function handleStoreForm(e) {
 }
 if (storeForm) storeForm.addEventListener("submit", handleStoreForm);
 
-},{"./storeForm":"2E0t7"}],"2E0t7":[function(require,module,exports) {
+},{"./storeForm":"6KuxK","@parcel/transformer-js/src/esmodule-helpers.js":"2vEuW"}],"6KuxK":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "createStore", ()=>createStore
 );
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
 const createStore = (form)=>{
+    var ref;
     console.log("Form recieved.");
     const newStore = new FormData();
     newStore.append("storeName", form.name.value.trim());
     newStore.append("description", form.description.value.trim());
     newStore.append("phoneNumber", form.phone.value.trim());
-    newStore.append("storeOwner", form.dataset.userID);
-    console.log(form.dataset.userID);
-    console.log(form.dataset);
+    newStore.append("storeOwner", form.dataset.userid);
+    const image = (ref = document.querySelector(".file-drop-input")) === null || ref === void 0 ? void 0 : ref.files;
+    console.log(image);
+};
+const sendStoreData = async (data)=>{
+    try {
+        const res = await _axiosDefault.default.post(`/api/v1/stores`, data);
+        if (res.data.status === "success") window.location.href = `${window.location.origin}/${res.data.data.slug}/dashboard`;
+    } catch (err) {
+        console.error(err);
+    }
 };
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2lpdS"}],"2lpdS":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"2vEuW"}],"2vEuW":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -437,6 +451,6 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}]},["5tDg9","2ejcX"], "2ejcX", "parcelRequireae0f")
+},{}]},["2ZPYD","3ZdWd"], "3ZdWd", "parcelRequireae0f")
 
 //# sourceMappingURL=bundle.js.map

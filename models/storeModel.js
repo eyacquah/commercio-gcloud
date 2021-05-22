@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const slugify = require("slugify");
 const validator = require("validator");
 
 const StoreSchema = new mongoose.Schema({
@@ -31,6 +32,11 @@ const StoreSchema = new mongoose.Schema({
   image: String,
   numOfProducts: Number,
   slug: String,
+});
+
+StoreSchema.pre("save", function (next) {
+  this.slug = slugify(this.storeName, { lower: true });
+  next();
 });
 
 const Store = mongoose.model("Store", StoreSchema);

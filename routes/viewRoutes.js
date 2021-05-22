@@ -8,6 +8,7 @@ router.get("/", viewController.renderIndex);
 router.get("/create-store", viewController.renderCreateStoreForm);
 router.get("/add-product", viewController.renderProductForm);
 router.get("/products", viewController.renderProducts);
-router.get("/dashboard", viewController.renderDashboard);
+
+router.get(":storeSlug/dashboard", viewController.renderDashboard);
 
 module.exports = router;
