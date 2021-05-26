@@ -1,6 +1,7 @@
-import axios from "axios";
+import axios from "../../node_modules/axios";
+// import { async } from "regenerator-runtime";
 
-export const createStore = (form) => {
+export const createStore = async (form) => {
   console.log("Form recieved.");
 
   const newStore = new FormData();
@@ -12,12 +13,15 @@ export const createStore = (form) => {
 
   const image = document.querySelector(".file-drop-input")?.files;
 
-  console.log(image);
+  newStore.append("image", image[0]);
+
+  await sendStoreData(newStore);
 };
 
 const sendStoreData = async (data) => {
   try {
     const res = await axios.post(`/api/v1/stores`, data);
+    // return console.log(res.data);
 
     if (res.data.status === "success") {
       window.location.href = `${window.location.origin}/${res.data.data.slug}/dashboard`;

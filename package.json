@@ -4,7 +4,7 @@
   "description": "Simple E-commerce store builder using Node Js, Express and MongoDB",
   "main": "./public/js/bundle.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=production node server",
+    "start": "node server.js",
     "dev": "cross-env NODE_ENV=development nodemon server",
     "watch": "parcel watch ./public/js/index.js --dist-dir ./public/js/bundle.js",
     "build": "parcel build ./public/js/index.js --dist-dir ./public/js/bundle.js"

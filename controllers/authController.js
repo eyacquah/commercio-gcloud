@@ -3,6 +3,7 @@ const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const User = require("../models/userModel");
 const Store = require("../models/storeModel");
 const catchAsync = require("../utils/catchAsync");
+const AppError = require("../utils/appError");
 
 //  emails: [{ value: "ascondaa@gmail.com", verified: true }]
 exports.passportConfig = (passport) => {
@@ -51,11 +52,30 @@ exports.passportConfig = (passport) => {
 exports.renderLogin = (req, res) => res.status(200).render("login");
 
 exports.renderStoreOrForm = catchAsync(async (req, res, next) => {
-  const store = await Store.findOne({ storeOwner: req.user._id });
+  const store = await Store.findOne({ storeOwner: req.user.id });
 
   if (!store) return res.redirect("/create-store");
 
-  console.log(store);
-
   res.redirect(`/${store.slug}/dashboard`);
+});
+
+exports.limitToUsers = (req, res, next) => {
+  if (!req.user) {
+    return next(new AppError("Please login to access this page", 400));
+  }
+
+  next();
+};
+
+exports.limitToStoreOwners = catchAsync(async (req, res, next) => {
+  if (!req.user) {
+    return next(new AppError("Please login to access this page", 400));
+  }
+
+  const store = await Store.findOne({ storeOwner: req.user.id });
+
+  if (!store) {
+    return next(new AppError("Sorry. You do not have access this page", 400));
+  }
+  next();
 });

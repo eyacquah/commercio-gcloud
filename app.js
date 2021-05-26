@@ -81,12 +81,15 @@ app.use(compression());
 
 // MOUNTING ROUTERS
 app.use((req, res, next) => {
-  res.locals.userID = req.user._id;
+  if (req.user) {
+    res.locals.userID = req.user._id;
+  }
   next();
 });
 app.use("/", require("./routes/viewRoutes"));
 app.use("/auth", require("./routes/authRoutes"));
 app.use("/api/v1/stores", require("./routes/storeRoutes"));
+app.use("/api/v1/products", require("./routes/productRoutes"));
 
 // Errors
 app.all("*", (req, res, next) => {

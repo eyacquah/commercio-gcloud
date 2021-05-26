@@ -12,15 +12,15 @@ aside.col-lg-4.pe-xl-5
         h3.fs-sm.mb-0.text-muted Account
       ul.list-unstyled.mb-0
         li.border-bottom.mb-0
-          a.nav-link-style.d-flex.align-items-center.px-4.py-3(href='dashboard-settings.html')
+          a.nav-link-style.d-flex.align-items-center.px-4.py-3(href='#')
             i.ci-settings.opacity-60.me-2
             | Settings
         li.border-bottom.mb-0
-          a.nav-link-style.d-flex.align-items-center.px-4.py-3(href='dashboard-purchases.html')
-            i.ci-basket.opacity-60.me-2
-            | Purchases
+          a.nav-link-style.d-flex.align-items-center.px-4.py-3(href=`/${store.slug}`)
+            i.ci-eye.opacity-60.me-2
+            | View Store
         li.mb-0
-          a.nav-link-style.d-flex.align-items-center.px-4.py-3(href='dashboard-favorites.html')
+          a.nav-link-style.d-flex.align-items-center.px-4.py-3(href='#')
             i.ci-heart.opacity-60.me-2
             | Favorites
             span.fs-sm.text-muted.ms-auto 4
@@ -28,25 +28,25 @@ aside.col-lg-4.pe-xl-5
         h3.fs-sm.mb-0.text-muted Seller Dashboard
       ul.list-unstyled.mb-0
         li.border-bottom.mb-0
-          a.nav-link-style.d-flex.align-items-center.px-4.py-3.active(href='dashboard-sales.html')
+          a.nav-link-style.d-flex.align-items-center.px-4.py-3.active(href=`/${store.slug}/dashboard`)
             i.ci-dollar.opacity-60.me-2
             | Sales
-            span.fs-sm.text-muted.ms-auto $1,375.00
+            span.fs-sm.text-muted.ms-auto= `$${store.stats.totalSales || 0}`
         li.border-bottom.mb-0
-          a.nav-link-style.d-flex.align-items-center.px-4.py-3(href='dashboard-products.html')
+          a.nav-link-style.d-flex.align-items-center.px-4.py-3(href=`/${store.slug}/dashboard/products`)
             i.ci-package.opacity-60.me-2
             | Products
-            span.fs-sm.text-muted.ms-auto 5
+            span.fs-sm.text-muted.ms-auto= `${store.stats.numOfProducts ||  0}`
         li.border-bottom.mb-0
-          a.nav-link-style.d-flex.align-items-center.px-4.py-3(href='dashboard-add-new-product.html')
+          a.nav-link-style.d-flex.align-items-center.px-4.py-3(href=`/${store.slug}/dashboard/products/add`)
             i.ci-cloud-upload.opacity-60.me-2
             | Add New Product
         li.border-bottom.mb-0
-          a.nav-link-style.d-flex.align-items-center.px-4.py-3(href='dashboard-payouts.html')
+          a.nav-link-style.d-flex.align-items-center.px-4.py-3(href=`/${store.slug}/dashboard/payouts`)
             i.ci-currency-exchange.opacity-60.me-2
             | Payouts
         li.mb-0
-          a.nav-link-style.d-flex.align-items-center.px-4.py-3(href='account-signin.html')
+          a.nav-link-style.d-flex.align-items-center.px-4.py-3(href=`/auth/logout`)
             i.ci-sign-out.opacity-60.me-2
             | Sign out
       hr

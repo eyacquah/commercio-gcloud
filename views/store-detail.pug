@@ -1,0 +1,85 @@
+extends base
+
+block content
+
+    .container.mb-5.pb-3
+        .bg-light.shadow-lg.rounded-3.overflow-hidden
+            .row
+                // Sidebar
+                aside.col-lg-4.pe-xl-5
+                    .bg-white.h-100.border-end.p-4
+                        .p-2
+                            h6 About
+                            p.fs-ms.text-muted
+                                | #{store.description}
+                            hr.my-4
+                            h6 Contacts
+                            ul.list-unstyled.fs-sm
+                                li
+                                    a.nav-link-style.d-flex.align-items-center(href='mailto:contact@example.com')
+                                        i.ci-phone.opacity-60.me-2
+                                        | #{store.phoneNumber}
+                                li
+                                    a.nav-link-style.d-flex.align-items-center(href='#')
+                                        i.ci-globe.opacity-60.me-2
+                                        | www.commercio.com/#{store.slug}
+                            a.btn-social.bs-facebook.bs-outline.bs-sm.me-2.mb-2(href='#')
+                                i.ci-facebook
+                            a.btn-social.bs-twitter.bs-outline.bs-sm.me-2.mb-2(href='#')
+                                i.ci-twitter
+                            a.btn-social.bs-dribbble.bs-outline.bs-sm.me-2.mb-2(href='#')
+                                i.ci-dribbble
+                            a.btn-social.bs-behance.bs-outline.bs-sm.me-2.mb-2(href='#')
+                                i.ci-behance
+                            hr.my-4
+                            h6.pb-1 Send message
+                            form.needs-validation.pb-2(method='post' novalidate='')
+                                .mb-3
+                                    textarea.form-control(rows='6' placeholder='Your message' required='')
+                                    .invalid-feedback Please write your message!
+                                button.btn.btn-primary.btn-sm.d-block.w-100(type='submit') Send
+                // Content
+                section.col-lg-8.pt-lg-4.pb-md-4
+                    .pt-2.px-4.ps-lg-0.pe-xl-5
+                        h2.h3.pt-2.pb-4.mb-4.text-center.text-sm-start.border-bottom
+                            | Products
+                            span.badge.bg-faded-accent.fs-sm.text-body.align-middle.ms-2 6
+                        .row.pt-2
+                            each product in products
+                                // Product
+                                .col-sm-6.mb-grid-gutter
+                                    .card.product-card-alt
+                                        .product-thumb
+                                            button.btn-wishlist.btn-sm(type='button')
+                                                i.ci-heart
+                                            .product-card-actions
+                                                a.btn.btn-light.btn-icon.btn-shadow.fs-base.mx-2(href=`/${store.slug}/products/${product.slug}`)
+                                                    i.ci-eye
+                                                button.btn.btn-light.btn-icon.btn-shadow.fs-base.mx-2(type='button')
+                                                    i.ci-cart
+                                            a.product-thumb-overlay(href=`/${store.slug}/products/${product.slug}`)
+                                            img(src=product.images[0] alt='Product' width="400" height="350")
+                                        .card-body
+                                            .d-flex.flex-wrap.justify-content-between.align-items-start.pb-2
+                                                .text-muted.fs-xs.me-1
+                                                    | by 
+                                                    a.product-meta.fw-medium(href='#')=`${store.storeName} ` 
+                                                    //- | in 
+                                                    //- a.product-meta.fw-medium(href='#') Food
+                                                .star-rating
+                                                    i.star-rating-icon.ci-star-filled.active
+                                                    i.star-rating-icon.ci-star-filled.active
+                                                    i.star-rating-icon.ci-star-filled.active
+                                                    i.star-rating-icon.ci-star-filled.active
+                                                    i.star-rating-icon.ci-star
+                                            h3.product-title.fs-sm.mb-2
+                                                a(href=`/${store.slug}/products/${product.slug}`)= product.title
+                                            .d-flex.flex-wrap.justify-content-between.align-items-center
+                                                .fs-sm.me-2
+                                                    i.ci-money-bag.text-muted.me-1
+                                                    | #{product.numOfSales || 0}
+                                                    span.fs-xs.ms-1 Sales
+                                                .bg-faded-accent.text-accent.rounded-1.py-1.px-2
+                                                    | $#{product.price}.
+                                                    small 00
+

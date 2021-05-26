@@ -29,13 +29,48 @@ const StoreSchema = new mongoose.Schema({
     city: String,
     streetAddress: String,
   },
+  createdAt: {
+    type: Date,
+    default: Date.now(),
+  },
+  stats: {
+    numOfSales: {
+      type: Number,
+      default: 0,
+    },
+    totalSales: {
+      type: Number,
+      default: 0,
+    },
+    totalCommissions: {
+      type: Number,
+      default: 0,
+    },
+    commissionsPaid: {
+      type: Number,
+      default: 0,
+    },
+    numOfProducts: {
+      type: Number,
+      default: 0,
+    },
+  },
   image: String,
-  numOfProducts: Number,
+  date: String,
   slug: String,
 });
 
 StoreSchema.pre("save", function (next) {
   this.slug = slugify(this.storeName, { lower: true });
+
+  // Create Human Readable Date
+  const date = new Date(Date.parse(this.createdAt));
+  const options = {
+    year: "numeric",
+    month: "long",
+  };
+
+  this.date = date.toLocaleString("en-GB", options);
   next();
 });
 

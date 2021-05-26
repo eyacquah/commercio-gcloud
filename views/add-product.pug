@@ -20,20 +20,20 @@ block content
                                     option Web Themes
                                     option Fonts
                                     option Add-Ons
-                        form
+                        form.productForm(data-store-id=store.id)
                             .mb-3.pb-2
-                                label.form-label(for='unp-product-name') Product name
-                                input#unp-product-name.form-control(type='text')
+                                label.form-label(for='title') Product Name
+                                input#title.form-control(type='text')
                                 .form-text Maximum 100 characters. No HTML or emoji allowed.
                             .file-drop-area.mb-3
                                 .file-drop-icon.ci-cloud-upload
-                                span.file-drop-message Drag and drop here to upload product screenshot
-                                input.file-drop-input(type='file')
+                                span.file-drop-message Drag and drop here to upload product image
+                                input.file-drop-input.images(type='file' multiple)
                                 button.file-drop-btn.btn.btn-primary.btn-sm.mb-2(type='button') Or select file
                                 .form-text 1000 x 800px ideal size for hi-res displays
                             .mb-3.py-2
-                                label.form-label(for='unp-product-description') Product description
-                                textarea#unp-product-description.form-control(rows='6')
+                                label.form-label(for='description') Product description
+                                textarea#description.form-control(rows='6')
                                 .bg-secondary.p-3.fs-ms.rounded-bottom
                                     span.d-inline-block.fw-medium.me-2.my-1 Markdown supported:
                                     em.d-inline-block.border-end.pe-2.me-2.my-1 *Italic*
@@ -43,29 +43,29 @@ block content
                                     span.d-inline-block --- Horizontal rule
                             .row
                                 .col-sm-6.mb-3
-                                    label.form-label(for='unp-standard-price') Standard license price
+                                    label.form-label(for='price') Price
                                     .input-group
                                         span.input-group-text
                                             i.ci-dollar
-                                        input#unp-standard-price.form-control(type='text')
+                                        input#price.form-control(type='text')
                                     .form-text Average marketplace price for this category is $15.
-                                .col-sm-6.mb-3
-                                    label.form-label(for='unp-extended-price') Extended license price
-                                    .input-group
-                                        span.input-group-text
-                                            i.ci-dollar
-                                        input#unp-extended-price.form-control(type='text')
-                                    .form-text Typically 10x of the Standard license price.
+                                //- .col-sm-6.mb-3
+                                //-     label.form-label(for='unp-extended-price') Extended license price
+                                //-     .input-group
+                                //-         span.input-group-text
+                                //-             i.ci-dollar
+                                //-         input#unp-extended-price.form-control(type='text')
+                                //-     .form-text Typically 10x of the Standard license price.
                             .mb-3.py-2
-                                label.form-label(for='unp-product-tags') Product tags
-                                textarea#unp-product-tags.form-control(rows='4')
+                                label.form-label(for='tags') Product tags
+                                textarea#tags.form-control(rows='4')
                                 .form-text
                                     | Up to 10 keywords that describe your item. Tags should all be in lowercase and separated by commas.
-                            .mb-3.pb-2
-                                label.form-label(for='unp-product-files') Product files for sale
-                                input#unp-product-files.form-control(type='file')
-                                .form-text Maximum file size is 1GB
-                            button.btn.btn-primary.d-block.w-100(type='submit')
+                            //- .mb-3.pb-2
+                            //-     label.form-label(for='unp-product-files') Product files for sale
+                            //-     input#unp-product-files.form-control(type='file')
+                            //-     .form-text Maximum file size is 1GB
+                            button.btn.btn-primary.d-block.w-100.productBtn(type='submit')
                                 i.ci-cloud-upload.fs-lg.me-2
                                 | Upload Product
 

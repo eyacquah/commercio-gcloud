@@ -3,7 +3,7 @@
 header.bg-light.shadow-sm.navbar-sticky
     .navbar.navbar-expand-lg.navbar-light
         .container
-            a.navbar-brand.d-none.d-sm-block.flex-shrink-0.me-4.order-lg-1(href='index.html')
+            a.navbar-brand.d-none.d-sm-block.flex-shrink-0.me-4.order-lg-1(href='/')
                 img(src='/assets/theme/img/comm_logo_transparent.png' width='122' alt='Commercio')
             // Toolbar
             .navbar-toolbar.d-flex.align-items-center.order-lg-3
@@ -17,45 +17,49 @@ header.bg-light.shadow-sm.navbar-sticky
                     span.navbar-tool-tooltip Favorites
                     .navbar-tool-icon-box
                         i.navbar-tool-icon.ci-heart
-                .navbar-tool.dropdown.ms-2
-                    a.navbar-tool-icon-box.border.dropdown-toggle(href='dashboard-sales.html')
-                        img(src='/assets/theme/img/marketplace/account/avatar-sm.png' width='32' alt='Createx Studio')
-                    a.navbar-tool-text.ms-n1(href='dashboard-sales.html')
-                        small Createx Std.
-                        | $1,375.00
-                    .dropdown-menu.dropdown-menu-end
-                        div(style='min-width: 14rem;')
-                            h6.dropdown-header Account
-                            a.dropdown-item.d-flex.align-items-center(href='dashboard-settings.html')
-                                i.ci-settings.opacity-60.me-2
-                                | Settings
-                            a.dropdown-item.d-flex.align-items-center(href='dashboard-purchases.html')
-                                i.ci-basket.opacity-60.me-2
-                                | Purchases
-                            a.dropdown-item.d-flex.align-items-center(href='dashboard-favorites.html')
-                                i.ci-heart.opacity-60.me-2
-                                | Favorites
-                                span.fs-xs.text-muted.ms-auto 4
-                            .dropdown-divider
-                            h6.dropdown-header Seller Dashboard
-                            a.dropdown-item.d-flex.align-items-center(href='dashboard-sales.html')
-                                i.ci-dollar.opacity-60.me-2
-                                | Sales
-                                span.fs-xs.text-muted.ms-auto $1,375.00
-                            a.dropdown-item.d-flex.align-items-center(href='dashboard-products.html')
-                                i.ci-package.opacity-60.me-2
-                                | Products
-                                span.fs-xs.text-muted.ms-auto 5
-                            a.dropdown-item.d-flex.align-items-center(href='dashboard-add-new-product.html')
-                                i.ci-cloud-upload.opacity-60.me-2
-                                | Add New Product
-                            a.dropdown-item.d-flex.align-items-center(href='dashboard-payouts.html')
-                                i.ci-currency-exchange.opacity-60.me-2
-                                | Payouts
-                            .dropdown-divider
-                            a.dropdown-item.d-flex.align-items-center(href='account-signin.html')
-                                i.ci-sign-out.opacity-60.me-2
-                                | Sign Out
+                .navbar-tool.ms-4
+                    a.navbar-tool-icon-box.bg-secondary.dropdown-toggle(href='#')
+                        span.navbar-tool-label 3
+                        i.navbar-tool-icon.ci-cart
+                //- .navbar-tool.dropdown.ms-2
+                //-     a.navbar-tool-icon-box.border.dropdown-toggle(href=`/${store.slug}/dashboard`)
+                //-         img(src=`${store.image || '/assets/theme/img/comm_logo_transparent.png'}` width='32' alt=`${store.storeName}`)
+                //-     a.navbar-tool-text.ms-n1(href=`/${store.slug}/dashboard`)
+                //-         small= store.storeName
+                //-         | $1,375.00
+                //-     .dropdown-menu.dropdown-menu-end
+                //-         div(style='min-width: 14rem;')
+                //-             h6.dropdown-header Account
+                //-             a.dropdown-item.d-flex.align-items-center(href='#')
+                //-                 i.ci-settings.opacity-60.me-2
+                //-                 | Settings
+                //-             a.dropdown-item.d-flex.align-items-center(href='#')
+                //-                 i.ci-basket.opacity-60.me-2
+                //-                 | Purchases
+                //-             a.dropdown-item.d-flex.align-items-center(href='#')
+                //-                 i.ci-heart.opacity-60.me-2
+                //-                 | Favorites
+                //-                 span.fs-xs.text-muted.ms-auto 4
+                //-             .dropdown-divider
+                //-             h6.dropdown-header Seller Dashboard
+                //-             a.dropdown-item.d-flex.align-items-center(href='dashboard-sales.html')
+                //-                 i.ci-dollar.opacity-60.me-2
+                //-                 | Sales
+                //-                 span.fs-xs.text-muted.ms-auto $1,375.00
+                //-             a.dropdown-item.d-flex.align-items-center(href='dashboard-products.html')
+                //-                 i.ci-package.opacity-60.me-2
+                //-                 | Products
+                //-                 span.fs-xs.text-muted.ms-auto 5
+                //-             a.dropdown-item.d-flex.align-items-center(href='dashboard-add-new-product.html')
+                //-                 i.ci-cloud-upload.opacity-60.me-2
+                //-                 | Add New Product
+                //-             a.dropdown-item.d-flex.align-items-center(href='dashboard-payouts.html')
+                //-                 i.ci-currency-exchange.opacity-60.me-2
+                //-                 | Payouts
+                //-             .dropdown-divider
+                //-             a.dropdown-item.d-flex.align-items-center(href='account-signin.html')
+                //-                 i.ci-sign-out.opacity-60.me-2
+                //-                 | Sign Out
             #navbarCollapse.collapse.navbar-collapse.me-auto.order-lg-2
                 // Search
                 .input-group.d-lg-none.my-3
@@ -211,14 +215,14 @@ header.bg-light.shadow-sm.navbar-sticky
     .container.d-flex.flex-wrap.flex-sm-nowrap.justify-content-center.justify-content-sm-between.align-items-center.pt-2
         .d-flex.align-items-center.pb-3
             .img-thumbnail.rounded-circle.position-relative.flex-shrink-0(style='width: 6.375rem;')
-                img.rounded-circle(src='/assets/theme/img/marketplace/account/avatar.png' alt='Createx Studio')
+                img.rounded-circle(src=`${store.image || '/assets/theme/img/comm_logo_transparent.png'}` alt=`${store.storeName}`)
             .ps-3
-                h3.text-light.fs-lg.mb-0 Createx Studio
-                span.d-block.text-light.fs-ms.opacity-60.py-1 Member since November 2019
+                h3.text-light.fs-lg.mb-0= store.storeName
+                span.d-block.text-light.fs-ms.opacity-60.py-1= `Member since ${store.date || 'January 2021'}`
         .d-flex
             .text-sm-end.me-5
                 .text-light.fs-base Total sales
-                h3.text-light 426
+                h3.text-light= `${store.stats.numOfSales || 0}`
             .text-sm-end
                 .text-light.fs-base Seller rating
                 .star-rating
