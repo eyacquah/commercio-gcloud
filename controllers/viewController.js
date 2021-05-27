@@ -48,3 +48,7 @@ exports.renderProductDetail = catchAsync(async (req, res) => {
 
   res.status(200).render("product-detail", { store, product, allProducts });
 });
+
+exports.renderCartPage = (req, res) => {
+  res.status(200).render("cart");
+};

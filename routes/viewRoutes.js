@@ -13,6 +13,8 @@ router.get(
   viewController.renderCreateStoreForm
 );
 
+router.get("/cart", viewController.renderCartPage);
+
 // router.use(authController.limitToStoreOwners);
 
 router.get(

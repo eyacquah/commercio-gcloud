@@ -55,7 +55,7 @@ block content
                                             .product-card-actions
                                                 a.btn.btn-light.btn-icon.btn-shadow.fs-base.mx-2(href=`/${store.slug}/products/${product.slug}`)
                                                     i.ci-eye
-                                                button.btn.btn-light.btn-icon.btn-shadow.fs-base.mx-2(type='button')
+                                                button.addToCart.btn.btn-light.btn-icon.btn-shadow.fs-base.mx-2(type='button' data-product=product data-store=store)
                                                     i.ci-cart
                                             a.product-thumb-overlay(href=`/${store.slug}/products/${product.slug}`)
                                             img(src=product.images[0] alt='Product' width="400" height="350")

@@ -13,14 +13,15 @@ header.bg-light.shadow-sm.navbar-sticky
                     span.navbar-tool-tooltip Search
                     .navbar-tool-icon-box
                         i.navbar-tool-icon.ci-search
-                a.navbar-tool.d-none.d-lg-flex(href='dashboard-favorites.html')
+                a.navbar-tool.d-none.d-lg-flex(href='#')
                     span.navbar-tool-tooltip Favorites
                     .navbar-tool-icon-box
                         i.navbar-tool-icon.ci-heart
-                .navbar-tool.ms-4
-                    a.navbar-tool-icon-box.bg-secondary.dropdown-toggle(href='#')
-                        span.navbar-tool-label 3
-                        i.navbar-tool-icon.ci-cart
+                include _cart-nav
+                //- .navbar-tool.ms-4
+                //-     a.navbar-tool-icon-box.bg-secondary.dropdown-toggle(href='/cart')
+                //-         span.cartQty.navbar-tool-label 3
+                //-         i.navbar-tool-icon.ci-cart
                 //- .navbar-tool.dropdown.ms-2
                 //-     a.navbar-tool-icon-box.border.dropdown-toggle(href=`/${store.slug}/dashboard`)
                 //-         img(src=`${store.image || '/assets/theme/img/comm_logo_transparent.png'}` width='32' alt=`${store.storeName}`)
@@ -76,34 +77,34 @@ header.bg-light.shadow-sm.navbar-sticky
                                 a.dropdown-item.dropdown-toggle(href='#' data-bs-toggle='dropdown') Photos
                                 ul.dropdown-menu
                                     li.dropdown-item.product-title.fw-medium
-                                        a(href='marketplace-category.html')
+                                        a(href='#')
                                             | All Photos
                                             i.ci-arrow-right.fs-xs.ms-1
                                     li.dropdown-divider
                                     li
-                                        a.dropdown-item(href='marketplace-category.html') Abstract
+                                        a.dropdown-item(href='#') Abstract
                                     li
-                                        a.dropdown-item(href='marketplace-category.html') Animals
+                                        a.dropdown-item(href='#') Animals
                                     li
-                                        a.dropdown-item(href='marketplace-category.html') Architecture
+                                        a.dropdown-item(href='#') Architecture
                                     li
-                                        a.dropdown-item(href='marketplace-category.html') Beauty &amp; Fashion
+                                        a.dropdown-item(href='#') Beauty &amp; Fashion
                                     li
-                                        a.dropdown-item(href='marketplace-category.html') Business
+                                        a.dropdown-item(href='#') Business
                                     li
-                                        a.dropdown-item(href='marketplace-category.html') Education
+                                        a.dropdown-item(href='#') Education
                                     li
-                                        a.dropdown-item(href='marketplace-category.html') Food &amp; Drink
+                                        a.dropdown-item(href='#') Food &amp; Drink
                                     li
-                                        a.dropdown-item(href='marketplace-category.html') Holidays
+                                        a.dropdown-item(href='#') Holidays
                                     li
-                                        a.dropdown-item(href='marketplace-category.html') Industrial
+                                        a.dropdown-item(href='#') Industrial
                                     li
-                                        a.dropdown-item(href='marketplace-category.html') People
+                                        a.dropdown-item(href='#') People
                                     li
-                                        a.dropdown-item(href='marketplace-category.html') Sports
+                                        a.dropdown-item(href='#') Sports
                                     li
-                                        a.dropdown-item(href='marketplace-category.html') Technology
+                                        a.dropdown-item(href='#') Technology
                             li.dropdown
                                 a.dropdown-item.dropdown-toggle(href='#' data-bs-toggle='dropdown') Graphics
                                 ul.dropdown-menu
@@ -113,95 +114,95 @@ header.bg-light.shadow-sm.navbar-sticky
                                             i.ci-arrow-right.fs-xs.ms-1
                                     li.dropdown-divider
                                     li
-                                        a.dropdown-item(href='marketplace-category.html') Icons
+                                        a.dropdown-item(href='#') Icons
                                     li
-                                        a.dropdown-item(href='marketplace-category.html') Illustartions
+                                        a.dropdown-item(href='#') Illustartions
                                     li
-                                        a.dropdown-item(href='marketplace-category.html') Patterns
+                                        a.dropdown-item(href='#') Patterns
                                     li
-                                        a.dropdown-item(href='marketplace-category.html') Textures
+                                        a.dropdown-item(href='#') Textures
                                     li
-                                        a.dropdown-item(href='marketplace-category.html') Web Elements
+                                        a.dropdown-item(href='#') Web Elements
                             li.dropdown
                                 a.dropdown-item.dropdown-toggle(href='#' data-bs-toggle='dropdown') UI Design
                                 ul.dropdown-menu
                                     li.dropdown-item.product-title.fw-medium
-                                        a(href='marketplace-category.html')
+                                        a(href='#')
                                             | All UI Design
                                             i.ci-arrow-right.fs-xs.ms-1
                                     li.dropdown-divider
                                     li
-                                        a.dropdown-item(href='marketplace-category.html') PSD Templates
+                                        a.dropdown-item(href='#') PSD Templates
                                     li
-                                        a.dropdown-item(href='marketplace-category.html') Sketch Templates
+                                        a.dropdown-item(href='#') Sketch Templates
                                     li
-                                        a.dropdown-item(href='marketplace-category.html') Adobe XD Templates
+                                        a.dropdown-item(href='#') Adobe XD Templates
                                     li
-                                        a.dropdown-item(href='marketplace-category.html') Figma Templates
+                                        a.dropdown-item(href='#') Figma Templates
                             li.dropdown
                                 a.dropdown-item.dropdown-toggle(href='#' data-bs-toggle='dropdown') Web Themes
                                 ul.dropdown-menu
                                     li.dropdown-item.product-title.fw-medium
-                                        a(href='marketplace-category.html')
+                                        a(href='#')
                                             | All Web Themes
                                             i.ci-arrow-right.fs-xs.ms-1
                                     li.dropdown-divider
                                     li
-                                        a.dropdown-item(href='marketplace-category.html') WordPress Themes
+                                        a.dropdown-item(href='#') WordPress Themes
                                     li
-                                        a.dropdown-item(href='marketplace-category.html') Bootstrap Themes
+                                        a.dropdown-item(href='#') Bootstrap Themes
                                     li
-                                        a.dropdown-item(href='marketplace-category.html') eCommerce Templates
+                                        a.dropdown-item(href='#') eCommerce Templates
                                     li
-                                        a.dropdown-item(href='marketplace-category.html') Muse Templates
+                                        a.dropdown-item(href='#') Muse Templates
                                     li
-                                        a.dropdown-item(href='marketplace-category.html') Plugins
+                                        a.dropdown-item(href='#') Plugins
                             li.dropdown
                                 a.dropdown-item.dropdown-toggle(href='#' data-bs-toggle='dropdown') Fonts
                                 ul.dropdown-menu
                                     li.dropdown-item.product-title.fw-medium
-                                        a(href='marketplace-category.html')
+                                        a(href='#')
                                             | All Fonts
                                             i.ci-arrow-right.fs-xs.ms-1
                                     li.dropdown-divider
                                     li
-                                        a.dropdown-item(href='marketplace-category.html') Blackletter
+                                        a.dropdown-item(href='#') Blackletter
                                     li
-                                        a.dropdown-item(href='marketplace-category.html') Display
+                                        a.dropdown-item(href='#') Display
                                     li
-                                        a.dropdown-item(href='marketplace-category.html') Non Western
+                                        a.dropdown-item(href='#') Non Western
                                     li
-                                        a.dropdown-item(href='marketplace-category.html') Sans Serif
+                                        a.dropdown-item(href='#') Sans Serif
                                     li
-                                        a.dropdown-item(href='marketplace-category.html') Script
+                                        a.dropdown-item(href='#') Script
                                     li
-                                        a.dropdown-item(href='marketplace-category.html') Serif
+                                        a.dropdown-item(href='#') Serif
                                     li
-                                        a.dropdown-item(href='marketplace-category.html') Slab Serif
+                                        a.dropdown-item(href='#') Slab Serif
                                     li
-                                        a.dropdown-item(href='marketplace-category.html') Symbols
+                                        a.dropdown-item(href='#') Symbols
                             li.dropdown
                                 a.dropdown-item.dropdown-toggle(href='#' data-bs-toggle='dropdown') Add-Ons
                                 ul.dropdown-menu
                                     li.dropdown-item.product-title.fw-medium
-                                        a(href='marketplace-category.html')
+                                        a(href='#')
                                             | All Add-Ons
                                             i.ci-arrow-right.fs-xs.ms-1
                                     li.dropdown-divider
                                     li
-                                        a.dropdown-item(href='marketplace-category.html') Photoshop Add-Ons
+                                        a.dropdown-item(href='#') Photoshop Add-Ons
                                     li
-                                        a.dropdown-item(href='marketplace-category.html') Illustrator Add-Ons
+                                        a.dropdown-item(href='#') Illustrator Add-Ons
                                     li
-                                        a.dropdown-item(href='marketplace-category.html') Sketch Plugins
+                                        a.dropdown-item(href='#') Sketch Plugins
                                     li
-                                        a.dropdown-item(href='marketplace-category.html') Procreate Brushes
+                                        a.dropdown-item(href='#') Procreate Brushes
                                     li
-                                        a.dropdown-item(href='marketplace-category.html') InDesign Palettes
+                                        a.dropdown-item(href='#') InDesign Palettes
                                     li
-                                        a.dropdown-item(href='marketplace-category.html') Lightroom Presets
+                                        a.dropdown-item(href='#') Lightroom Presets
                                     li
-                                        a.dropdown-item(href='marketplace-category.html') Other Software
+                                        a.dropdown-item(href='#') Other Software
     // Search collapse
     #searchBox.search-box.collapse
         .card.pt-2.pb-4.border-0.rounded-0
