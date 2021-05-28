@@ -14,6 +14,11 @@ router.get(
 );
 
 router.get("/cart", viewController.renderCartPage);
+router.get("/checkout", viewController.renderCheckoutPage);
+router.get("/shipping", viewController.renderShippingPage);
+router.get("/payment", viewController.renderPaymentPage);
+router.get("/order-summary", viewController.renderOrderSummaryPage);
+router.get("/order/complete", viewController.renderOrderCompletePage);
 
 // router.use(authController.limitToStoreOwners);
 

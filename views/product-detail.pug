@@ -101,7 +101,7 @@ header.bg-light.shadow-sm.navbar-sticky
                                         .image-zoom-pane
                                     -if(product.images[1])
                                         #second.product-gallery-preview-item
-                                            img.image-zoom(src=product.images[0] data-zoom=product.images[1] alt=product.title)
+                                            img.image-zoom(src=product.images[1] data-zoom=product.images[1] alt=product.title)
                                             .image-zoom-pane
                                     -if(product.images[2])
                                         #third.product-gallery-preview-item
@@ -141,7 +141,7 @@ header.bg-light.shadow-sm.navbar-sticky
                                         | Product available
                                         
                                 .d-flex.align-items-center.pt-2.pb-4
-                                    select.form-select.me-3(style='width: 5rem')
+                                    select.itemQty.form-select.me-3(style='width: 5rem')
                                         option(value='1') 1
                                         option(value='2') 2
                                         option(value='3') 3

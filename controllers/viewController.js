@@ -52,3 +52,22 @@ exports.renderProductDetail = catchAsync(async (req, res) => {
 exports.renderCartPage = (req, res) => {
   res.status(200).render("cart");
 };
+
+exports.renderCheckoutPage = (req, res) => {
+  res.status(200).render("checkout");
+};
+
+exports.renderShippingPage = (req, res) => {
+  res.status(200).render("shipping");
+};
+
+exports.renderPaymentPage = (req, res) => {
+  res.status(200).render("payment");
+};
+exports.renderOrderSummaryPage = (req, res) => {
+  res.status(200).render("order-summary");
+};
+
+exports.renderOrderCompletePage = (req, res) => {
+  res.status(200).render("order-complete");
+};

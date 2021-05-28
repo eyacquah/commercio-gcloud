@@ -3,7 +3,9 @@ export const showAlert = (type, msg, insertClass) => {
   <div class="alert alert-${
     type === "success" ? "success" : "danger"
   } alert-dismissible fade show" role="alert">
-  <span class="fw-medium">${type.toUpperCase()} :</span> ${msg}
+  <span class="fw-medium">${
+    type === "success" ? "PRO TIP" : type.toUpperCase()
+  } :</span> ${msg}
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
   `;

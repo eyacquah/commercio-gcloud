@@ -1,0 +1,291 @@
+doctype html
+head
+  meta(charset='utf-8')
+  title Commercio | Checkout
+  // SEO Meta Tags
+  meta(name='description' content='Cartzilla - Bootstrap E-commerce Template')
+  meta(name='keywords' content='bootstrap, shop, e-commerce, market, modern, responsive,  business, mobile, bootstrap, html5, css3, js, gallery, slider, touch, creative, clean')
+  meta(name='author' content='Createx Studio')
+  // Viewport
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  // Favicon and Touch Icons
+  link(rel='shortcut icon' href='/assets/theme//assets/theme/img/comm_favicon.png' type='image/png')
+  // Vendor Styles including: Font Icons, Plugins, etc.
+  link(rel='stylesheet' media='screen' href='/assets/theme/vendor/simplebar/dist/simplebar.min.css')
+  link(rel='stylesheet' media='screen' href='/assets/theme/vendor/tiny-slider/dist/tiny-slider.css')
+  // Main Theme Styles + Bootstrap
+  link(rel='stylesheet' media='screen' href='/assets/theme/css/theme.min.css')
+// Body
+
+// Navbar Marketplace
+// Remove "navbar-sticky" class to make navigation bar scrollable with the page.
+header.bg-light.shadow-sm.navbar-sticky
+  .navbar.navbar-expand-lg.navbar-light
+    .container
+      a.navbar-brand.d-none.d-sm-block.flex-shrink-0.me-4.order-lg-1(href='/')
+        img(src='/assets/theme/img/comm_logo_transparent.png' width='122' alt='Commercio')
+      // Toolbar
+      .navbar-toolbar.d-flex.align-items-center.order-lg-3
+        button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarCollapse')
+          span.navbar-toggler-icon
+        a.navbar-tool.d-none.d-lg-flex(href='javascript:void(0)' data-bs-toggle='collapse' data-bs-target='#searchBox' role='button' aria-expanded='false' aria-controls='searchBox')
+          span.navbar-tool-tooltip Search
+          .navbar-tool-icon-box
+            i.navbar-tool-icon.ci-search
+        a.navbar-tool.d-none.d-lg-flex(href='#')
+          span.navbar-tool-tooltip Favorites
+          .navbar-tool-icon-box
+            i.navbar-tool-icon.ci-heart
+        include _cart-nav
+      #navbarCollapse.collapse.navbar-collapse.me-auto.order-lg-2
+        // Search
+        .input-group.d-lg-none.my-3
+          i.ci-search.position-absolute.top-50.start-0.translate-middle-y.text-muted.fs-base.ms-3
+          input.form-control.rounded-start(type='text' placeholder='Search marketplace')
+        
+  // Search collapse
+  #searchBox.search-box.collapse
+    .card.pt-2.pb-4.border-0.rounded-0
+      .container
+        .input-group
+          i.ci-search.position-absolute.top-50.start-0.translate-middle-y.text-muted.fs-base.ms-3
+          input.form-control.rounded-start(type='text' placeholder='Search marketplace')
+
+
+//- NEW CODE
+
+// Page Title
+.page-title-overlap.bg-dark.pt-4
+  .container.d-lg-flex.justify-content-between.py-2.py-lg-3
+    .order-lg-2.mb-3.mb-lg-0.pt-lg-2
+      nav(aria-label='breadcrumb')
+        ol.breadcrumb.breadcrumb-light.flex-lg-nowrap.justify-content-center.justify-content-lg-start
+          li.breadcrumb-item
+            a.text-nowrap(href='/')
+              i.ci-home
+              | Commercio
+          li.breadcrumb-item.text-nowrap
+            a(href='#') Shop
+          li.breadcrumb-item.text-nowrap.active(aria-current='page') Checkout
+    .order-lg-1.pe-lg-4.text-center.text-lg-start
+      h1.h3.text-light.mb-0 Checkout
+.container.pb-5.mb-2.mb-md-4
+  .row
+    section.col-lg-8
+      // Steps
+      .steps.steps-light.pt-2.pb-3.mb-5
+        a.step-item.active(href='/cart')
+          .step-progress
+            span.step-count 1
+          .step-label
+            i.ci-cart
+            | Cart
+        a.step-item.active(href='/checkout')
+          .step-progress
+            span.step-count 2
+          .step-label
+            i.ci-user-circle
+            | Details
+        a.step-item.active.current(href='/shipping')
+          .step-progress
+            span.step-count 3
+          .step-label
+            i.ci-package
+            | Shipping
+        a.step-item(href='/payment')
+          .step-progress
+            span.step-count 4
+          .step-label
+            i.ci-card
+            | Payment
+        a.step-item(href='/order-summary')
+          .step-progress
+            span.step-count 5
+          .step-label
+            i.ci-check-circle
+            | Review
+
+      // Shipping methods table
+      .insertAlert
+      h2.h6.pb-3.mb-2 Choose shipping method
+      .table-responsive
+        table.table.table-hover.fs-sm.border-top
+          thead
+            tr
+              th.align-middle
+              th.align-middle Shipping method
+              th.align-middle Delivery time
+              th.align-middle Handling fee
+          tbody
+            tr
+              td
+                .form-check.mb-4
+                  input#courier.form-check-input(type='radio' name='shipping-method' checked='')
+                  label.form-check-label(for='courier')
+              td.align-middle
+                span.text-dark.fw-medium Courier
+                br
+                span.text-muted All addresses (default zone), United States &amp; Canada
+              td.align-middle 2 - 4 days
+              td.align-middle $26.50
+            tr
+              td
+                .form-check.mb-4
+                  input#local.form-check-input(type='radio' name='shipping-method')
+                  label.form-check-label(for='local')
+              td.align-middle
+                span.text-dark.fw-medium Local Shipping
+                br
+                span.text-muted All addresses (default zone), United States &amp; Canada
+              td.align-middle up to one week
+              td.align-middle $10.00
+            tr
+              td
+                .form-check.mb-4
+                  input#flat.form-check-input(type='radio' name='shipping-method')
+                  label.form-check-label(for='flat')
+              td.align-middle
+                span.text-dark.fw-medium Flat Rate
+                br
+                span.text-muted All addresses (default zone)
+              td.align-middle 5 - 7 days
+              td.align-middle $33.85
+            tr
+              td
+                .form-check.mb-4
+                  input#ups.form-check-input(type='radio' name='shipping-method')
+                  label.form-check-label(for='ups')
+              td.align-middle
+                span.text-dark.fw-medium UPS Ground Shipping
+                br
+                span.text-muted All addresses (default zone)
+              td.align-middle 4 - 6 days
+              td.align-middle $18.00
+            tr
+              td
+                .form-check.mb-4
+                  input#pickup.form-check-input(type='radio' name='shipping-method')
+                  label.form-check-label(for='pickup')
+              td.align-middle
+                span.text-dark.fw-medium Local Pickup from store
+                br
+                span.text-muted All addresses (default zone)
+              td.align-middle &mdash;
+              td.align-middle $0.00
+            tr
+              td
+                .form-check.mb-4
+                  input#locker.form-check-input(type='radio' name='shipping-method')
+                  label.form-check-label(for='locker')
+              td.align-middle
+                span.text-dark.fw-medium Pick Up at Cartzilla Locker
+                br
+                span.text-muted All addresses (default zone), United States &amp; Canada
+              td.align-middle &mdash;
+              td.align-middle $9.99
+            tr
+              td
+                .form-check.mb-4
+                  input#global-export.form-check-input(type='radio' name='shipping-method')
+                  label.form-check-label(for='global-export')
+              td.align-middle
+                span.text-dark.fw-medium Cartzilla Global Export
+                br
+                span.text-muted.fs-sm All addresses (default zone), outside United States
+              td.align-middle 3 - 4 days
+              td.align-middle $25.00
+            tr
+              td
+                .form-check.mb-4
+                  input#same-day.form-check-input(type='radio' name='shipping-method')
+                  label.form-check-label(for='same-day')
+              td.align-middle
+                span.text-dark.fw-medium Same-Day Delivery
+                br
+                span.text-muted Only United States
+              td.align-middle &mdash;
+              td.align-middle $34.00
+            tr
+              td
+                .form-check.mb-4
+                  input#international.form-check-input(type='radio' name='shipping-method')
+                  label.form-check-label(for='international')
+              td.align-middle
+                span.text-dark.fw-medium International Shipping
+                br
+                span.text-muted All addresses (default zone)
+              td.align-middle up to 15 days
+              td.align-middle $27.00
+      // Navigation (desktop)
+      .d-none.d-lg-flex.pt-4
+        .w-50.pe-3
+          a.btn.btn-secondary.d-block.w-100(href='/checkout')
+            i.ci-arrow-left.mt-sm-0.me-1
+            span.d-none.d-sm-inline Back to Adresses
+            span.d-inline.d-sm-none Back
+        .w-50.ps-2
+          a.btn.btn-primary.d-block.w-100(href='/payment')
+            span.d-none.d-sm-inline Proceed to Payment
+            span.d-inline.d-sm-none Next
+            i.ci-arrow-right.mt-sm-0.ms-1
+    // Sidebar
+    aside.col-lg-4.pt-4.pt-lg-0.ps-xl-5
+      .bg-white.rounded-3.shadow-lg.p-4.ms-lg-auto
+        .py-2.px-xl-2
+          .widget.mb-3
+            h2.widget-title.text-center Order summary
+            .productContainer
+                //- .d-flex.align-items-center.pb-2.border-bottom
+                //- a.d-block.flex-shrink-0(href='shop-single-v1.html')
+                //-     img(src='img/shop/cart/widget/01.jpg' width='64' alt='Product')
+                //- .ps-2
+                //-     h6.widget-product-title
+                //-     a(href='shop-single-v1.html') Women Colorblock Sneakers
+                //-     .widget-product-meta
+                //-     span.text-accent.me-2
+                //-         | $150.
+                //-         small 00
+                //-     span.text-muted x 1
+            
+            
+            
+          ul.list-unstyled.fs-sm.pb-2.border-bottom
+            li.d-flex.justify-content-between.align-items-center
+              span.me-2 Subtotal:
+              span.orderSubtotal.text-end
+                | $265.
+                small 00
+            li.d-flex.justify-content-between.align-items-center
+              span.me-2 Shipping:
+              span.text-end &mdash;
+            //- li.d-flex.justify-content-between.align-items-center
+            //-   span.me-2 Taxes:
+            //-   span.text-end
+            //-     | $9.
+            //-     small 50
+            li.d-flex.justify-content-between.align-items-center
+              span.me-2 Discount:
+              span.text-end &mdash;
+          h3.orderTotal.fw-normal.text-center.my-4
+            | $274.
+            small 50
+          form.needs-validation(novalidate='')
+            .mb-3
+              input.form-control(type='text' placeholder='Promo code' required='')
+              .invalid-feedback Please provide promo code.
+            button.btn.btn-outline-primary.d-block.w-100(type='submit') Apply promo code
+  // Navigation (mobile)
+  .row.d-lg-none
+    .col-lg-8
+      .d-flex.pt-4.mt-3
+        .w-50.pe-3
+          a.btn.btn-secondary.d-block.w-100(href='/checkout')
+            i.ci-arrow-left.mt-sm-0.me-1
+            span.d-none.d-sm-inline Back to Adresses
+            span.d-inline.d-sm-none Back
+        .w-50.ps-2
+          a.btn.btn-primary.d-block.w-100(href='/payment')
+            span.d-none.d-sm-inline Proceed to Payment
+            span.d-inline.d-sm-none Next
+            i.ci-arrow-right.mt-sm-0.ms-1
+include _footer

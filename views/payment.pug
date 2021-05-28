@@ -1,0 +1,242 @@
+doctype html
+head
+  meta(charset='utf-8')
+  title Commercio | Payment
+  // SEO Meta Tags
+  meta(name='description' content='Cartzilla - Bootstrap E-commerce Template')
+  meta(name='keywords' content='bootstrap, shop, e-commerce, market, modern, responsive,  business, mobile, bootstrap, html5, css3, js, gallery, slider, touch, creative, clean')
+  meta(name='author' content='Createx Studio')
+  // Viewport
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  // Favicon and Touch Icons
+  link(rel='shortcut icon' href='/assets/theme//assets/theme/img/comm_favicon.png' type='image/png')
+  // Vendor Styles including: Font Icons, Plugins, etc.
+  link(rel='stylesheet' media='screen' href='/assets/theme/vendor/simplebar/dist/simplebar.min.css')
+  link(rel='stylesheet' media='screen' href='/assets/theme/vendor/tiny-slider/dist/tiny-slider.css')
+  // Main Theme Styles + Bootstrap
+  link(rel='stylesheet' media='screen' href='/assets/theme/css/theme.min.css')
+// Body
+
+// Navbar Marketplace
+// Remove "navbar-sticky" class to make navigation bar scrollable with the page.
+header.bg-light.shadow-sm.navbar-sticky
+  .navbar.navbar-expand-lg.navbar-light
+    .container
+      a.navbar-brand.d-none.d-sm-block.flex-shrink-0.me-4.order-lg-1(href='/')
+        img(src='/assets/theme/img/comm_logo_transparent.png' width='122' alt='Commercio')
+      // Toolbar
+      .navbar-toolbar.d-flex.align-items-center.order-lg-3
+        button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarCollapse')
+          span.navbar-toggler-icon
+        a.navbar-tool.d-none.d-lg-flex(href='javascript:void(0)' data-bs-toggle='collapse' data-bs-target='#searchBox' role='button' aria-expanded='false' aria-controls='searchBox')
+          span.navbar-tool-tooltip Search
+          .navbar-tool-icon-box
+            i.navbar-tool-icon.ci-search
+        a.navbar-tool.d-none.d-lg-flex(href='#')
+          span.navbar-tool-tooltip Favorites
+          .navbar-tool-icon-box
+            i.navbar-tool-icon.ci-heart
+        include _cart-nav
+      #navbarCollapse.collapse.navbar-collapse.me-auto.order-lg-2
+        // Search
+        .input-group.d-lg-none.my-3
+          i.ci-search.position-absolute.top-50.start-0.translate-middle-y.text-muted.fs-base.ms-3
+          input.form-control.rounded-start(type='text' placeholder='Search marketplace')
+        
+  // Search collapse
+  #searchBox.search-box.collapse
+    .card.pt-2.pb-4.border-0.rounded-0
+      .container
+        .input-group
+          i.ci-search.position-absolute.top-50.start-0.translate-middle-y.text-muted.fs-base.ms-3
+          input.form-control.rounded-start(type='text' placeholder='Search marketplace')
+
+
+//- NEW CODE
+
+// Page Title
+.page-title-overlap.bg-dark.pt-4
+  .container.d-lg-flex.justify-content-between.py-2.py-lg-3
+    .order-lg-2.mb-3.mb-lg-0.pt-lg-2
+      nav(aria-label='breadcrumb')
+        ol.breadcrumb.breadcrumb-light.flex-lg-nowrap.justify-content-center.justify-content-lg-start
+          li.breadcrumb-item
+            a.text-nowrap(href='/')
+              i.ci-home
+              | Commercio
+          li.breadcrumb-item.text-nowrap
+            a(href='#') Shop
+          li.breadcrumb-item.text-nowrap.active(aria-current='page') Checkout
+    .order-lg-1.pe-lg-4.text-center.text-lg-start
+      h1.h3.text-light.mb-0 Checkout
+.container.pb-5.mb-2.mb-md-4
+  .row
+    section.col-lg-8
+      // Steps
+      .steps.steps-light.pt-2.pb-3.mb-5
+        a.step-item.active(href='/cart')
+          .step-progress
+            span.step-count 1
+          .step-label
+            i.ci-cart
+            | Cart
+        a.step-item.active(href='/checkout')
+          .step-progress
+            span.step-count 2
+          .step-label
+            i.ci-user-circle
+            | Details
+        a.step-item.active(href='/shipping')
+          .step-progress
+            span.step-count 3
+          .step-label
+            i.ci-package
+            | Shipping
+        a.step-item.active.current(href='/payment')
+          .step-progress
+            span.step-count 4
+          .step-label
+            i.ci-card
+            | Payment
+        a.step-item(href='/order-summary')
+          .step-progress
+            span.step-count 5
+          .step-label
+            i.ci-check-circle
+            | Review
+
+      // Payment methods accordion
+      .insertAlert
+      h2.h6.pb-3.mb-2 Choose payment method
+      #payment-method.accordion.mb-2
+        .accordion-item
+          h3.accordion-header
+            a.accordion-button(href='#card' data-bs-toggle='collapse')
+              i.ci-card.fs-lg.me-2.mt-n1.align-middle
+              | Pay with Credit Card
+          #card.accordion-collapse.collapse.show(data-bs-parent='#payment-method')
+            .accordion-body
+              p.fs-sm
+                | We accept following credit cards:&nbsp;&nbsp;
+                img.d-inline-block.align-middle(src='/assets/theme/img/cards.png' width='187' alt='Cerdit Cards')
+              .credit-card-wrapper
+              form.credit-card-form.row
+                .mb-3.col-sm-6
+                  input.form-control(type='text' name='number' placeholder='Card Number' required='')
+                .mb-3.col-sm-6
+                  input.form-control(type='text' name='name' placeholder='Full Name' required='')
+                .mb-3.col-sm-3
+                  input.form-control(type='text' name='expiry' placeholder='MM/YY' required='')
+                .mb-3.col-sm-3
+                  input.form-control(type='text' name='cvc' placeholder='CVC' required='')
+                .col-sm-6
+                  button.btn.btn-outline-primary.d-block.w-100.mt-0(type='submit') Submit
+        .accordion-item
+          h3.accordion-header
+            a.accordion-button.collapsed(href='#paypal' data-bs-toggle='collapse')
+              i.ci-paypal.me-2.align-middle
+              | Pay with PayPal
+          #paypal.accordion-collapse.collapse(data-bs-parent='#payment-method')
+            .accordion-body.fs-sm
+              p
+                span.fw-medium PayPal
+                |  - the safer, easier way to pay
+              form.row.needs-validation(novalidate='')
+                .col-sm-6
+                  .mb-3
+                    input.form-control(type='email' placeholder='E-mail' required='')
+                    .invalid-feedback Please enter valid email address
+                .col-sm-6
+                  .mb-3
+                    input.form-control(type='password' placeholder='Password' required='')
+                    .invalid-feedback Please enter your password
+                .col-12
+                  .d-flex.flex-wrap.justify-content-between.align-items-center
+                    a.nav-link-style(href='#') Forgot password?
+                    button.btn.btn-primary(type='submit') Log In
+        .accordion-item
+          h3.accordion-header
+            a.accordion-button.collapsed(href='#points' data-bs-toggle='collapse')
+              i.ci-gift.me-2
+              | Redeem Reward Points
+          #points.accordion-collapse.collapse(data-bs-parent='#payment-method')
+            .accordion-body
+              p
+                | You currently have
+                span.fw-medium &nbsp;384
+                | &nbsp;Reward Points to spend.
+              .form-check.d-block
+                input#use_points.form-check-input(type='checkbox')
+                label.form-check-label(for='use_points') Use my Reward Points to pay for this order.
+      // Navigation (desktop)
+      .d-none.d-lg-flex.pt-4
+        .w-50.pe-3
+          a.btn.btn-secondary.d-block.w-100(href='/shipping')
+            i.ci-arrow-left.mt-sm-0.me-1
+            span.d-none.d-sm-inline Back to Shipping
+            span.d-inline.d-sm-none Back
+        .w-50.ps-2
+          a.btn.btn-primary.d-block.w-100(href='/order-summary')
+            span.d-none.d-sm-inline Review your order
+            span.d-inline.d-sm-none Review order
+            i.ci-arrow-right.mt-sm-0.ms-1
+    // Sidebar
+    aside.col-lg-4.pt-4.pt-lg-0.ps-xl-5
+      .bg-white.rounded-3.shadow-lg.p-4.ms-lg-auto
+        .py-2.px-xl-2
+          .widget.mb-3
+            h2.widget-title.text-center Order summary
+                .productContainer
+                    //- .d-flex.align-items-center.pb-2.border-bottom
+                    //-     a.d-block.flex-shrink-0(href='shop-single-v1.html')
+                    //-     img(src='/assets/theme/img/shop/cart/widget/01.jpg' width='64' alt='Product')
+                    //-     .ps-2
+                    //-     h6.widget-product-title
+                    //-         a(href='shop-single-v1.html') Women Colorblock Sneakers
+                    //-     .widget-product-meta
+                    //-         span.text-accent.me-2
+                    //-         | $150.
+                    //-         small 00
+                    //-         span.text-muted x 1
+            
+          ul.list-unstyled.fs-sm.pb-2.border-bottom
+            li.d-flex.justify-content-between.align-items-center
+              span.me-2 Subtotal:
+              span.orderSubtotal.text-end
+                | $265.
+                small 00
+            li.d-flex.justify-content-between.align-items-center
+              span.me-2 Shipping:
+              span.text-end &mdash;
+            //- li.d-flex.justify-content-between.align-items-center
+            //-   span.me-2 Taxes:
+            //-   span.text-end
+            //-     | $9.
+            //-     small 50
+            li.d-flex.justify-content-between.align-items-center
+              span.me-2 Discount:
+              span.text-end &mdash;
+          h3.orderTotal.fw-normal.text-center.my-4
+            | $274.
+            small 50
+          form.needs-validation(novalidate='')
+            .mb-3
+              input.form-control(type='text' placeholder='Promo code' required='')
+              .invalid-feedback Please provide promo code.
+            button.btn.btn-outline-primary.d-block.w-100(type='submit') Apply promo code
+  // Navigation (mobile)
+  .row.d-lg-none
+    .col-lg-8
+      .d-flex.pt-4.mt-3
+        .w-50.pe-3
+          a.btn.btn-secondary.d-block.w-100(href='/shipping')
+            i.ci-arrow-left.mt-sm-0.me-1
+            span.d-none.d-sm-inline Back to Shipping
+            span.d-inline.d-sm-none Back
+        .w-50.ps-2
+          a.btn.btn-primary.d-block.w-100(href='/order-summary')
+            span.d-none.d-sm-inline Review your order
+            span.d-inline.d-sm-none Review order
+            i.ci-arrow-right.mt-sm-0.ms-1
+// Footer
+include _footer
