@@ -24,19 +24,19 @@ router.get("/order/complete", viewController.renderOrderCompletePage);
 
 router.get(
   "/:storeSlug/dashboard",
-  authController.limitToStoreOwners,
+  // authController.limitToStoreOwners,
   viewController.renderDashboard
 );
 
 router.get(
   "/:storeSlug/dashboard/products/add",
-  authController.limitToStoreOwners,
+  // authController.limitToStoreOwners,
   viewController.renderProductForm
 );
 
 router.get(
   "/:storeSlug/dashboard/products",
-  authController.limitToStoreOwners,
+  // authController.limitToStoreOwners,
   viewController.renderProductsDashboard
 );
 

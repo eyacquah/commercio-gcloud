@@ -1,0 +1,35 @@
+.modal(tabindex='-1' role='dialog' style='padding-right: 16px' aria-modal='true' id="modalDefault")
+    .modal-dialog.modal-dialog-centered(role='document')
+        .modal-content
+            .modal-header
+                ul.nav.nav-tabs.card-header-tabs(role='tablist')
+                    li.nav-item
+                        a.nav-link.active(href='#signin' data-bs-toggle='tab' role='tab' aria-selected='true')
+                            i.ci-unlocked.me-2.mt-n1
+                            |                   Sign in
+                button.closeModal.btn-close(type='button' data-bs-dismiss='modal' aria-label='Close')
+            .modal-body.tab-content.py-4
+                .mb-3.text-center
+                    dl
+                        dt View Live Store
+                        dd
+                            | A live test store to play around with, add to cart and make
+                            | test purchases
+                    a.btn.btn-primary.btn-shadow.d-block.w-100(type='button' href='/burger-quarter')
+                        | View Store
+                .mb-3.text-center
+                    dl
+                        dt View Store Dashboard
+                        dd
+                            | Don&apos;t want to sign in? No problem! You can still checkout a
+                            | store&apos;s dashboard and even upload products
+                    a.btn.btn-primary.btn-shadow.d-block.w-100(type='button' href="/burger-quarter/dashboard")
+                        | View Dashboard
+                .mb-3.text-center
+                    dl
+                        dt Experience The Full Package
+                        dd
+                            | Sign in with your Google Account, create your store, upload
+                            | your products and make test purchases while you&apos;re at it
+                    a.btn.btn-primary.btn-shadow.d-block.w-100(type='button' href="/auth/google")
+                        | Sign In With Google

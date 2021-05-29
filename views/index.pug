@@ -17,6 +17,12 @@ head
   link(rel='stylesheet' href='/assets/index/css/default.css')
   // ====== Style CSS ======
   link(rel='stylesheet' href='/assets/index/css/style.css')
+  link(rel='stylesheet' media='screen' href='/assets/theme/vendor/simplebar/dist/simplebar.min.css')
+  link(rel='stylesheet' media='screen' href='/assets/theme/vendor/tiny-slider/dist/tiny-slider.css')
+  link(rel='stylesheet' media='screen' href='/assets/theme/css/theme.min.css')
+  link(rel='stylesheet' media='screen' href='/assets/theme/css/modal.css')
+
+
 //if IE
   p.browserupgrade
     | You are using an 
@@ -64,11 +70,12 @@ header.header-area
                 //-   a.page-scroll(href='#blog') Blog
             // navbar collapse
             .navbar-btn.d-none.d-sm-inline-block
-              a.main-btn(data-scroll-nav='0' href='/auth/login' rel='nofollow') Create A Store
+              a.main-btn(data-scroll-nav='0' href='#/' data-bs-toggle="modal" data-bs-target="#modalDefault" rel='nofollow') Create A Store
           // navbar
       // row
     // container
   // navbar area
+  include _modal
   #home.header-hero.bg_cover(style='background-image: url(/assets/index/images/comm_rose-Petals.svg)')
     .container
       .row.justify-content-center
@@ -78,7 +85,7 @@ header.header-area
             h2.header-title.wow.fadeInUp(data-wow-duration='1.3s' data-wow-delay='0.5s') Kickstart Your Business&apos; Store
             p.text.wow.fadeInUp(data-wow-duration='1.3s' data-wow-delay='0.8s')
               | Easily setup an online store, accept card and mobile payments, organize and keep track of orders
-            a.main-btn.wow.fadeInUp(href='/auth/login' data-wow-duration='1.3s' data-wow-delay='1.1s') Get Started
+            a.main-btn.wow.fadeInUp(href='#/' data-wow-duration='1.3s' data-wow-delay='1.1s' data-bs-toggle="modal" data-bs-target="#modalDefault") Get Started
           // header hero content
       // row
       .row
@@ -140,7 +147,7 @@ section#features.services-area.pt-120
               a(href='#') Clean
             p.text
               | Create a clean and beautiful store that shoppers love and see your sales skyrocket
-            a.more(href='/auth/login')
+            a.more(href='#/' data-bs-toggle="modal" data-bs-target="#modalDefault")
               | Create A Store 
               i.lni.lni-chevron-right
         // single services
@@ -155,7 +162,7 @@ section#features.services-area.pt-120
               a(href='#') Organized
             p.text
               | Keep your business organized by keeping track of orders and pending deliveries, and many more
-            a.more(href='/auth/login')
+            a.more(href='#/' data-bs-toggle="modal" data-bs-target="#modalDefault")
               | Create A Store
               i.lni.lni-chevron-right
         // single services
@@ -170,7 +177,7 @@ section#features.services-area.pt-120
               a(href='#') Secure
             p.text
               | Accept card and mobile payments from your customers with our built-in secure payments integration
-            a.more(href='/auth/login')
+            a.more(href='#/' data-bs-toggle="modal" data-bs-target="#modalDefault")
               | Create A Store 
               i.lni.lni-chevron-right
         // single services
@@ -191,7 +198,7 @@ section#about.about-area.pt-70
           // section title
           p.text
             | Create your store in just a few clicks. Login using your Google account, upload up to 20 products and voila! You have a store! Share a link of your store to customers and start taking orders immediately. The days of "Dm for prices" are officially over :)
-          a.main-btn(href='#') Create A Store
+          a.main-btn(href='#/' data-bs-toggle="modal" data-bs-target="#modalDefault") Create A Store
         // about content
       .col-lg-6
         .about-image.text-center.mt-50.wow.fadeInRightBig(data-wow-duration='1s' data-wow-delay='0.5s')
@@ -218,7 +225,7 @@ section.about-area.pt-70
           // section title
           p.text
             | Online shoppers loooove clean and elegantly designed stores. With our pre-built design, your customers would absoloutely love you and will keep buying more from you. Every page has been built with your customers in mind. Create your Commercio store today and see your customers fall in love with your brand.
-          a.main-btn(href='#') Create A Store
+          a.main-btn(href='#/' data-bs-toggle="modal" data-bs-target="#modalDefault") Create A Store
         // about content
       .col-lg-6.order-lg-first
         .about-image.text-center.mt-50.wow.fadeInRightBig(data-wow-duration='1s' data-wow-delay='0.5s')
@@ -240,7 +247,7 @@ section.about-area.pt-70
           // section title
           p.text
             | Commercio was created with passionate African entrepreneurs like you in mind. Our mission is to build the tools that'll cause your business to grow tremendously. That's why we've fully integrated with Africa's leading Payment Providers and Shipping and Logistics companies. Our team will continue to blow your mind with new, better and easy ways to sell your products to customers
-          a.main-btn(href='#') Create A Store
+          a.main-btn(href='#/' data-bs-toggle="modal" data-bs-target="#modalDefault") Create A Store
         // about content
       .col-lg-6
         .about-image.text-center.mt-50.wow.fadeInRightBig(data-wow-duration='1s' data-wow-delay='0.5s')
@@ -444,3 +451,10 @@ script(src='/assets/index/js/wow.min.js')
 script(src='/assets/index/js/particles.min.js')
 // ====== Main js ======
 script(src='/assets/index/js/main.js')
+script(src='/assets/theme/vendor/bootstrap/dist/js/bootstrap.bundle.min.js')
+script(src='/assets/theme/vendor/simplebar/dist/simplebar.min.js')
+script(src='/assets/theme/vendor/tiny-slider/dist/min/tiny-slider.js')
+script(src='/assets/theme/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js')
+script(src='/assets/theme/js/theme.min.js')
+script(src="/js/bundle.js") 
+

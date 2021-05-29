@@ -422,7 +422,7 @@ if (productContainer) _checkout.order.renderOrderSummary();
 if (completeOrderBtns) completeOrderBtns.forEach((btn)=>btn.addEventListener("click", handleOrderComplete)
 );
 
-},{"../../node_modules/regenerator-runtime":"47I7E","./storeForm":"6novE","./productForm":"1BMhp","./cart":"5UFHA","@parcel/transformer-js/src/esmodule-helpers.js":"1wtP7","./checkout":"qQPNU"}],"47I7E":[function(require,module,exports) {
+},{"../../node_modules/regenerator-runtime":"47I7E","./storeForm":"6novE","./productForm":"1BMhp","./cart":"5UFHA","./checkout":"qQPNU","@parcel/transformer-js/src/esmodule-helpers.js":"1wtP7"}],"47I7E":[function(require,module,exports) {
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
  *
@@ -2704,10 +2704,10 @@ class Cart {
     }
 }
 const cart = new Cart();
-cart.init();
+if (cartContainer) cart.init();
 if (itemContainer) cart.renderCartPage();
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"1wtP7","./helpers":"3HsGi"}],"qQPNU":[function(require,module,exports) {
+},{"./helpers":"3HsGi","@parcel/transformer-js/src/esmodule-helpers.js":"1wtP7"}],"qQPNU":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "order", ()=>order

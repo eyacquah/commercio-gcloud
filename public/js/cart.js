@@ -175,7 +175,9 @@ class Cart {
 }
 
 export const cart = new Cart();
-cart.init();
+if (cartContainer) {
+  cart.init();
+}
 
 if (itemContainer) {
   cart.renderCartPage();
