@@ -1,0 +1,52 @@
+doctype html
+head
+  meta(charset='utf-8')
+  title Commercio | #{title}
+  // SEO Meta Tags
+  meta(name='description' content='Commercio E-Commerce Store Builder')
+  meta(name='keywords' content='shop, e-commerce, market, modern, responsive, ')
+  meta(name='author' content='Commercio')
+  // Viewport
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  // Favicon and Touch Icons
+  link(rel='shortcut icon' href='/assets/theme/assets/theme/img/comm_favicon.png' type='image/png')
+  // Vendor Styles including: Font Icons, Plugins, etc.
+  link(rel='stylesheet' media='screen' href='/assets/theme/vendor/simplebar/dist/simplebar.min.css')
+  link(rel='stylesheet' media='screen' href='/assets/theme/vendor/tiny-slider/dist/tiny-slider.css')
+  // Main Theme Styles + Bootstrap
+  link(rel='stylesheet' media='screen' href='/assets/theme/css/theme.min.css')
+// Body
+
+// Navbar Marketplace
+// Remove "navbar-sticky" class to make navigation bar scrollable with the page.
+header.bg-light.shadow-sm.navbar-sticky
+  .navbar.navbar-expand-lg.navbar-light
+    .container
+      a.navbar-brand.d-none.d-sm-block.flex-shrink-0.me-4.order-lg-1(href='/')
+        img(src='/assets/theme/img/comm_logo_transparent.png' width='122' alt='Commercio')
+      // Toolbar
+      .navbar-toolbar.d-flex.align-items-center.order-lg-3
+        button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarCollapse')
+          span.navbar-toggler-icon
+        a.navbar-tool.d-none.d-lg-flex(href='javascript:void(0)' data-bs-toggle='collapse' data-bs-target='#searchBox' role='button' aria-expanded='false' aria-controls='searchBox')
+          span.navbar-tool-tooltip Search
+          .navbar-tool-icon-box
+            i.navbar-tool-icon.ci-search
+        a.navbar-tool.d-none.d-lg-flex(href='#')
+          span.navbar-tool-tooltip Favorites
+          .navbar-tool-icon-box
+            i.navbar-tool-icon.ci-heart
+        include _cart-nav
+      #navbarCollapse.collapse.navbar-collapse.me-auto.order-lg-2
+        // Search
+        .input-group.d-lg-none.my-3
+          i.ci-search.position-absolute.top-50.start-0.translate-middle-y.text-muted.fs-base.ms-3
+          input.form-control.rounded-start(type='text' placeholder='Search marketplace')
+        
+  // Search collapse
+  #searchBox.search-box.collapse
+    .card.pt-2.pb-4.border-0.rounded-0
+      .container
+        .input-group
+          i.ci-search.position-absolute.top-50.start-0.translate-middle-y.text-muted.fs-base.ms-3
+          input.form-control.rounded-start(type='text' placeholder='Search marketplace')

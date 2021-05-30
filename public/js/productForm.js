@@ -2,8 +2,6 @@ import axios from "../../node_modules/axios";
 import { showAlert, renderSpinner } from "./helpers";
 
 export const createProduct = async (form) => {
-  console.log("Form recieved.");
-
   const productForm = new FormData();
 
   //   const arr = window.location.pathname.split("/");
@@ -48,11 +46,11 @@ const sendProductData = async (data) => {
     if (res.data.status === "success") {
       const paths = window.location.pathname.split("/");
 
-      window.location.href = `${window.location.origin}/${paths[1]}/dashboard`;
+      window.location.href = `${window.location.origin}/${paths[1]}/dashboard/products`;
     }
   } catch (err) {
     showAlert("error", "Product not uploaded", "productForm");
     showAlert("error", err.message, "productForm");
-    console.error(error);
+    console.error(err);
   }
 };
