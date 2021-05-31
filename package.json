@@ -29,7 +29,6 @@
     "mongoose": "^5.12.8",
     "morgan": "^1.10.0",
     "multer": "^1.4.2",
-    "parcel": "^2.0.0-beta.3.1",
     "passport": "^0.4.1",
     "passport-google-oauth20": "^2.0.0",
     "paystack": "^2.0.1",
@@ -51,6 +50,8 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "parcel": "^2.0.0-beta.2",
     "prettier": "^2.2.1"
   },
   "engines": {
