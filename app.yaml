@@ -2,5 +2,5 @@ runtime: nodejs12
 env: standard
 env_variables:
   MONGO_URL: mongodb+srv://eyacquah:Si_.@n4TjBYHzMy@cluster0.cmktk.mongodb.net/commercio?retryWrites=true&w=majority
-  GOOGLE_CLIENT_ID: 506749845528-o5n93bnlh710b2k8d865k0ve1q0omufr.apps.googleusercontent.com
-  GOOGLE_CLIENT_SECRET: DmyCnxculb8GvxSbXC7pZs9A
+  GOOGLE_CLIENT_ID: 110391433971-jlonume67c36uteleloluqdpmlhd8926.apps.googleusercontent.com
+  GOOGLE_CLIENT_SECRET: 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
